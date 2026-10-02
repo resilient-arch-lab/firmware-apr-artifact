@@ -1,0 +1,3027 @@
+{
+  "MdeModulePkg_Variable.c": [
+    {
+      "if_line": 133,
+      "pattern": "naive-guard",
+      "insertion_after_line": 192,
+      "next_statement": "}",
+      "condition_snippet": "if (FeaturePcdGet (PcdVariableCollectStatistics)) {"
+    },
+    {
+      "if_line": 135,
+      "pattern": "naive-guard",
+      "insertion_after_line": 138,
+      "next_statement": "if (gVariableInfo == NULL) {",
+      "condition_snippet": "if (AtRuntime ()) {"
+    },
+    {
+      "if_line": 157,
+      "pattern": "naive-guard",
+      "insertion_after_line": 174,
+      "next_statement": "if (Entry->Next == NULL) {",
+      "condition_snippet": "if (CompareGuid (VendorGuid, &Entry->VendorGuid)) {"
+    },
+    {
+      "if_line": 158,
+      "pattern": "naive-guard",
+      "insertion_after_line": 173,
+      "next_statement": "}",
+      "condition_snippet": "if (StrCmp (VariableName, Entry->Name) == 0) {"
+    },
+    {
+      "if_line": 213,
+      "pattern": "naive-guard",
+      "insertion_after_line": 219,
+      "next_statement": "return TRUE;",
+      "condition_snippet": "if ((Variable == NULL) || (Variable >= VariableStoreEnd) || (Variable->StartId != VARIABLE_DATA)) {"
+    },
+    {
+      "if_line": 277,
+      "pattern": "naive-guard",
+      "insertion_after_line": 296,
+      "next_statement": "VolatileBase = (VARIABLE_STORE_HEADER *) ((UINTN) mVariableModuleGlobal->VariableGlobal.VolatileVariableBase);",
+      "condition_snippet": "if (!Volatile) {"
+    },
+    {
+      "if_line": 278,
+      "pattern": "naive-guard",
+      "insertion_after_line": 280,
+      "next_statement": "Status = Fvb->GetPhysicalAddress(Fvb, &FvVolHdr);",
+      "condition_snippet": "if (Fvb == NULL) {"
+    },
+    {
+      "if_line": 293,
+      "pattern": "naive-guard",
+      "insertion_after_line": 295,
+      "next_statement": "} else {",
+      "condition_snippet": "if ((DataPtr + DataSize) > ((EFI_PHYSICAL_ADDRESS) (UINTN) ((UINT8 *) FwVolHeader + FwVolHeader->FvL"
+    },
+    {
+      "if_line": 306,
+      "pattern": "naive-guard",
+      "insertion_after_line": 308,
+      "next_statement": "CopyMem ((UINT8 *)(UINTN)DataPtr, Buffer, DataSize);",
+      "condition_snippet": "if ((DataPtr + DataSize) > ((UINTN) ((UINT8 *) VolatileBase + VolatileBase->Size))) {"
+    },
+    {
+      "if_line": 326,
+      "pattern": "naive-guard",
+      "insertion_after_line": 328,
+      "next_statement": "for (PtrBlockMapEntry = mNvFvHeaderCache->BlockMap; PtrBlockMapEntry->NumBlocks != 0; PtrBlockMapEntry++) {",
+      "condition_snippet": "if (CurrWritePtr < LinearOffset) {"
+    },
+    {
+      "if_line": 336,
+      "pattern": "naive-guard",
+      "insertion_after_line": 363,
+      "next_statement": "LinearOffset += PtrBlockMapEntry->Length;",
+      "condition_snippet": "if ((CurrWritePtr >= LinearOffset) && (CurrWritePtr < LinearOffset + PtrBlockMapEntry->Length)) {"
+    },
+    {
+      "if_line": 337,
+      "pattern": "naive-guard",
+      "insertion_after_line": 346,
+      "next_statement": "Size = (UINT32) (LinearOffset + PtrBlockMapEntry->Length - CurrWritePtr);",
+      "condition_snippet": "if ((CurrWritePtr + CurrWriteSize) <= (LinearOffset + PtrBlockMapEntry->Length)) {"
+    },
+    {
+      "if_line": 355,
+      "pattern": "naive-guard",
+      "insertion_after_line": 357,
+      "next_statement": "CurrWritePtr  = LinearOffset + PtrBlockMapEntry->Length;",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 390,
+      "pattern": "naive-guard",
+      "insertion_after_line": 397,
+      "next_statement": "((UINT32 *)(&VarStoreHeader->Signature))[1] == 0xffffffff &&",
+      "condition_snippet": "if ((CompareGuid (&VarStoreHeader->Signature, &gEfiAuthenticatedVariableGuid) ||        CompareGuid "
+    },
+    {
+      "if_line": 451,
+      "pattern": "naive-guard",
+      "insertion_after_line": 459,
+      "next_statement": "if (Variable->State == (UINT8) (-1) ||",
+      "condition_snippet": "if (mVariableModuleGlobal->VariableGlobal.AuthFormat) {"
+    },
+    {
+      "if_line": 452,
+      "pattern": "naive-guard",
+      "insertion_after_line": 457,
+      "next_statement": "return (UINTN) AuthVariable->NameSize;",
+      "condition_snippet": "if (AuthVariable->State == (UINT8) (-1) ||        AuthVariable->DataSize == (UINT32) (-1) ||        "
+    },
+    {
+      "if_line": 460,
+      "pattern": "naive-guard",
+      "insertion_after_line": 465,
+      "next_statement": "return (UINTN) Variable->NameSize;",
+      "condition_snippet": "if (Variable->State == (UINT8) (-1) ||         Variable->DataSize == (UINT32) (-1) ||         Variab"
+    },
+    {
+      "if_line": 510,
+      "pattern": "naive-guard",
+      "insertion_after_line": 518,
+      "next_statement": "if (Variable->State == (UINT8) (-1) ||",
+      "condition_snippet": "if (mVariableModuleGlobal->VariableGlobal.AuthFormat) {"
+    },
+    {
+      "if_line": 511,
+      "pattern": "naive-guard",
+      "insertion_after_line": 516,
+      "next_statement": "return (UINTN) AuthVariable->DataSize;",
+      "condition_snippet": "if (AuthVariable->State == (UINT8) (-1) ||        AuthVariable->DataSize == (UINT32) (-1) ||        "
+    },
+    {
+      "if_line": 519,
+      "pattern": "naive-guard",
+      "insertion_after_line": 524,
+      "next_statement": "return (UINTN) Variable->DataSize;",
+      "condition_snippet": "if (Variable->State == (UINT8) (-1) ||         Variable->DataSize == (UINT32) (-1) ||         Variab"
+    },
+    {
+      "if_line": 585,
+      "pattern": "naive-guard",
+      "insertion_after_line": 587,
+      "next_statement": "return &Variable->VendorGuid;",
+      "condition_snippet": "if (mVariableModuleGlobal->VariableGlobal.AuthFormat) {"
+    },
+    {
+      "if_line": 749,
+      "pattern": "naive-guard",
+      "insertion_after_line": 758,
+      "next_statement": "Status = FindVariable (",
+      "condition_snippet": "if (!mEndOfDxe) {"
+    },
+    {
+      "if_line": 770,
+      "pattern": "success-path",
+      "insertion_after_line": 770,
+      "next_statement": "VarErrFlag = (VAR_ERROR_FLAG *) GetVariableDataPtr (Variable.CurrPtr);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 774,
+      "pattern": "naive-guard",
+      "insertion_after_line": 776,
+      "next_statement": "Status = UpdateVariableStore (",
+      "condition_snippet": "if (TempFlag == *VarErrFlag) {"
+    },
+    {
+      "if_line": 786,
+      "pattern": "success-path",
+      "insertion_after_line": 786,
+      "next_statement": "*VarErrFlag = TempFlag;",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 814,
+      "pattern": "naive-guard",
+      "insertion_after_line": 816,
+      "next_statement": "Flag = mCurrentBootVarErrFlag;",
+      "condition_snippet": "if (!mEndOfDxe) {"
+    },
+    {
+      "if_line": 828,
+      "pattern": "success-path",
+      "insertion_after_line": 828,
+      "next_statement": "VarErrFlag = *((VAR_ERROR_FLAG *) GetVariableDataPtr (Variable.CurrPtr));",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 830,
+      "pattern": "naive-guard",
+      "insertion_after_line": 832,
+      "next_statement": "}",
+      "condition_snippet": "if (VarErrFlag == Flag) {"
+    },
+    {
+      "if_line": 869,
+      "pattern": "naive-guard",
+      "insertion_after_line": 873,
+      "next_statement": "return FALSE;",
+      "condition_snippet": "if (mEndOfDxe && (mVariableModuleGlobal->CommonMaxUserVariableSpace != mVariableModuleGlobal->Common"
+    },
+    {
+      "if_line": 870,
+      "pattern": "naive-guard",
+      "insertion_after_line": 872,
+      "next_statement": "}",
+      "condition_snippet": "if (VarCheckLibVariablePropertyGet (GetVariableNamePtr (Variable), GetVendorGuidPtr (Variable), &Pro"
+    },
+    {
+      "if_line": 924,
+      "pattern": "naive-guard",
+      "insertion_after_line": 926,
+      "next_statement": "InitializeVarErrorFlag ();",
+      "condition_snippet": "if (!mEndOfDxe) {"
+    },
+    {
+      "if_line": 992,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1028,
+      "next_statement": "MaximumBufferSize = mNvVariableCache->Size;",
+      "condition_snippet": "if (IsVolatile) {"
+    },
+    {
+      "if_line": 1025,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1027,
+      "next_statement": "} else {",
+      "condition_snippet": "if (ValidBuffer == NULL) {"
+    },
+    {
+      "if_line": 1073,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1115,
+      "next_statement": "Variable = NextVariable;",
+      "condition_snippet": "if (Variable != UpdatingVariable && Variable != UpdatingInDeletedTransition && Variable->State == (V"
+    },
+    {
+      "if_line": 1086,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1095,
+      "next_statement": "AddedVariable = NextAddedVariable;",
+      "condition_snippet": "if (CompareGuid (GetVendorGuidPtr (AddedVariable), GetVendorGuidPtr (Variable)) &&             NameS"
+    },
+    {
+      "if_line": 1091,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1094,
+      "next_statement": "}",
+      "condition_snippet": "if (CompareMem (Point0, Point1, NameSize) == 0) {"
+    },
+    {
+      "if_line": 1123,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1158,
+      "next_statement": "if (IsVolatile) {",
+      "condition_snippet": "if (NewVariable != NULL) {"
+    },
+    {
+      "if_line": 1124,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1130,
+      "next_statement": "if (!IsVolatile) {",
+      "condition_snippet": "if (((UINTN) CurrPtr - (UINTN) ValidBuffer) + NewVariableSize > VariableStoreHeader->Size) {"
+    },
+    {
+      "if_line": 1131,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1149,
+      "next_statement": "CopyMem (CurrPtr, (UINT8 *) NewVariable, NewVariableSize);",
+      "condition_snippet": "if (!IsVolatile) {"
+    },
+    {
+      "if_line": 1140,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1148,
+      "next_statement": "}",
+      "condition_snippet": "if ((HwErrVariableTotalSize > PcdGet32 (PcdHwErrStorageSize)) ||           (CommonVariableTotalSize "
+    },
+    {
+      "if_line": 1176,
+      "pattern": "success-path",
+      "insertion_after_line": 1176,
+      "next_statement": "*LastVariableOffset = (UINTN) CurrPtr - (UINTN) ValidBuffer;",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 1251,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1278,
+      "next_statement": "}",
+      "condition_snippet": "if (PtrTrack->CurrPtr->State == VAR_ADDED ||         PtrTrack->CurrPtr->State == (VAR_IN_DELETED_TRA"
+    },
+    {
+      "if_line": 1254,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1277,
+      "next_statement": "}",
+      "condition_snippet": "if (IgnoreRtCheck || !AtRuntime () || ((PtrTrack->CurrPtr->Attributes & EFI_VARIABLE_RUNTIME_ACCESS)"
+    },
+    {
+      "if_line": 1255,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1262,
+      "next_statement": "if (CompareGuid (VendorGuid, GetVendorGuidPtr (PtrTrack->CurrPtr))) {",
+      "condition_snippet": "if (VariableName[0] == 0) {"
+    },
+    {
+      "if_line": 1263,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1275,
+      "next_statement": "}",
+      "condition_snippet": "if (CompareGuid (VendorGuid, GetVendorGuidPtr (PtrTrack->CurrPtr))) {"
+    },
+    {
+      "if_line": 1267,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1274,
+      "next_statement": "}",
+      "condition_snippet": "if (CompareMem (VariableName, Point, NameSizeOfVariable (PtrTrack->CurrPtr)) == 0) {"
+    },
+    {
+      "if_line": 1325,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1327,
+      "next_statement": "VariableStoreHeader[VariableStoreTypeVolatile] = (VARIABLE_STORE_HEADER *) (UINTN) Global->VolatileVariableBase;",
+      "condition_snippet": "if (VariableName[0] != 0 && VendorGuid == NULL) {"
+    },
+    {
+      "if_line": 1342,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1344,
+      "next_statement": "PtrTrack->StartPtr = GetStartPointer (VariableStoreHeader[Type]);",
+      "condition_snippet": "if (VariableStoreHeader[Type] == NULL) {"
+    },
+    {
+      "if_line": 1351,
+      "pattern": "success-path",
+      "insertion_after_line": 1351,
+      "next_statement": "return Status;",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 1395,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1408,
+      "next_statement": "Index = 0;",
+      "condition_snippet": "if (Iso639Language) {"
+    },
+    {
+      "if_line": 1398,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1404,
+      "next_statement": "}",
+      "condition_snippet": "if (AsciiStrnCmp (Lang, SupportedLang + Index, CompareLength) == 0) {"
+    },
+    {
+      "if_line": 1425,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1431,
+      "next_statement": "}",
+      "condition_snippet": "if ((CompareLength == LanguageLength) &&           (AsciiStrnCmp (Lang, SupportedLang, CompareLength"
+    },
+    {
+      "if_line": 1477,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1487,
+      "next_statement": "while (TRUE) {",
+      "condition_snippet": "if (Iso639Language) {"
+    },
+    {
+      "if_line": 1495,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1502,
+      "next_statement": "if (SubIndex == Index) {",
+      "condition_snippet": "if ((*Supported == '\\0') && (SubIndex != Index)) {"
+    },
+    {
+      "if_line": 1503,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1511,
+      "next_statement": "SubIndex++;",
+      "condition_snippet": "if (SubIndex == Index) {"
+    },
+    {
+      "if_line": 1576,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1578,
+      "next_statement": "VA_START (Args, Iso639Language);",
+      "condition_snippet": "if (SupportedLanguages == NULL) {"
+    },
+    {
+      "if_line": 1606,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1621,
+      "next_statement": "if (AsciiStrnCmp (Supported, Language, LanguageLength) == 0) {",
+      "condition_snippet": "if (Iso639Language == 0) {"
+    },
+    {
+      "if_line": 1618,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1620,
+      "next_statement": "}",
+      "condition_snippet": "if (LanguageLength > CompareLength) {"
+    },
+    {
+      "if_line": 1625,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1631,
+      "next_statement": "}",
+      "condition_snippet": "if (AsciiStrnCmp (Supported, Language, LanguageLength) == 0) {"
+    },
+    {
+      "if_line": 1727,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1732,
+      "next_statement": "return FALSE;",
+      "condition_snippet": "if (RemainingVariableStorageSize >= TotalNeededSize) {"
+    },
+    {
+      "if_line": 1755,
+      "pattern": "success-path",
+      "insertion_after_line": 1755,
+      "next_statement": "NextVariable = GetNextVariablePtr (VariablePtrTrack.CurrPtr);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 1766,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1772,
+      "next_statement": "RemainingVariableStorageSize -= VariableEntry->VariableSize;",
+      "condition_snippet": "if (VariableEntry->VariableSize > RemainingVariableStorageSize) {"
+    },
+    {
+      "if_line": 1861,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1863,
+      "next_statement": "SetLanguageCodes = FALSE;",
+      "condition_snippet": "if (DataSize == 0) {"
+    },
+    {
+      "if_line": 1867,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1897,
+      "next_statement": "if (AtRuntime ()) {",
+      "condition_snippet": "if (StrCmp (VariableName, EFI_PLATFORM_LANG_CODES_VARIABLE_NAME) == 0) {"
+    },
+    {
+      "if_line": 1871,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1873,
+      "next_statement": "SetLanguageCodes = TRUE;",
+      "condition_snippet": "if (AtRuntime ()) {"
+    },
+    {
+      "if_line": 1901,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1903,
+      "next_statement": "SetLanguageCodes = TRUE;",
+      "condition_snippet": "if (AtRuntime ()) {"
+    },
+    {
+      "if_line": 1918,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1949,
+      "next_statement": "Status = EFI_SUCCESS;",
+      "condition_snippet": "if (SetLanguageCodes       && (mVariableModuleGlobal->PlatformLangCodes != NULL)       && (mVariable"
+    },
+    {
+      "if_line": 1926,
+      "pattern": "success-path",
+      "insertion_after_line": 1926,
+      "next_statement": "VariableName = EFI_PLATFORM_LANG_VARIABLE_NAME;",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 1935,
+      "pattern": "success-path",
+      "insertion_after_line": 1935,
+      "next_statement": "VariableName = EFI_LANG_VARIABLE_NAME;",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2057,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2062,
+      "next_statement": "return Status;",
+      "condition_snippet": "if (SetLanguageCodes) {"
+    },
+    {
+      "if_line": 2084,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2086,
+      "next_statement": "return (BOOLEAN) (FirstTime->Month < SecondTime->Month);",
+      "condition_snippet": "if (FirstTime->Year != SecondTime->Year) {"
+    },
+    {
+      "if_line": 2153,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2171,
+      "next_statement": "if ((CacheVariable->CurrPtr != NULL) &&",
+      "condition_snippet": "if (mVariableModuleGlobal->FvbInstance == NULL) {"
+    },
+    {
+      "if_line": 2157,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2163,
+      "next_statement": "DEBUG ((EFI_D_ERROR, \"Update AUTH variable before EFI_VARIABLE_WRITE_ARCH_PROTOCOL ready - %r\\n\", EFI_NOT_AVAILABLE_YET));",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_NON_VOLATILE) != 0) {"
+    },
+    {
+      "if_line": 2177,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2200,
+      "next_statement": "if ((CacheVariable->CurrPtr == NULL) || CacheVariable->Volatile) {",
+      "condition_snippet": "if ((CacheVariable->CurrPtr != NULL) &&       (mVariableModuleGlobal->VariableGlobal.HobVariableBase"
+    },
+    {
+      "if_line": 2185,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2199,
+      "next_statement": "}",
+      "condition_snippet": "if (CacheVariable->CurrPtr == NULL || EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2189,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2198,
+      "next_statement": "}",
+      "condition_snippet": "if ((((Attributes & EFI_VARIABLE_APPEND_WRITE) == 0) && (DataSize == 0)) || (Attributes == 0)) {"
+    },
+    {
+      "if_line": 2235,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2408,
+      "next_statement": "if ((DataSize == 0) && ((Attributes & EFI_VARIABLE_APPEND_WRITE) != 0)) {",
+      "condition_snippet": "if (Variable->CurrPtr != NULL) {"
+    },
+    {
+      "if_line": 2239,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2264,
+      "next_statement": "if ((((Attributes & EFI_VARIABLE_APPEND_WRITE) == 0) && (DataSize == 0))|| ((Attributes & (EFI_VARIABLE_RUNTIME_ACCESS | EFI_VARIABLE_BOOTSERVICE_ACCESS)) == 0)) {",
+      "condition_snippet": "if (AtRuntime ()) {"
+    },
+    {
+      "if_line": 2245,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2248,
+      "next_statement": "if ((CacheVariable->CurrPtr->Attributes & EFI_VARIABLE_NON_VOLATILE) == 0) {",
+      "condition_snippet": "if (Variable->Volatile) {"
+    },
+    {
+      "if_line": 2252,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2255,
+      "next_statement": "if ((CacheVariable->CurrPtr->Attributes & EFI_VARIABLE_RUNTIME_ACCESS) == 0) {",
+      "condition_snippet": "if ((CacheVariable->CurrPtr->Attributes & EFI_VARIABLE_NON_VOLATILE) == 0) {"
+    },
+    {
+      "if_line": 2260,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2263,
+      "next_statement": "}",
+      "condition_snippet": "if ((CacheVariable->CurrPtr->Attributes & EFI_VARIABLE_RUNTIME_ACCESS) == 0) {"
+    },
+    {
+      "if_line": 2272,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2319,
+      "next_statement": "if (DataSizeOfVariable (CacheVariable->CurrPtr) == DataSize &&",
+      "condition_snippet": "if ((((Attributes & EFI_VARIABLE_APPEND_WRITE) == 0) && (DataSize == 0))|| ((Attributes & (EFI_VARIA"
+    },
+    {
+      "if_line": 2273,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2297,
+      "next_statement": "State = CacheVariable->CurrPtr->State;",
+      "condition_snippet": "if (Variable->InDeletedTransitionPtr != NULL) {"
+    },
+    {
+      "if_line": 2290,
+      "pattern": "success-path",
+      "insertion_after_line": 2290,
+      "next_statement": "if (!Variable->Volatile) {",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2311,
+      "pattern": "success-path",
+      "insertion_after_line": 2311,
+      "next_statement": "UpdateVariableInfo (VariableName, VendorGuid, Variable->Volatile, FALSE, FALSE, TRUE, FALSE);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2324,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2334,
+      "next_statement": "(CacheVariable->CurrPtr->State == (VAR_ADDED & VAR_IN_DELETED_TRANSITION))) {",
+      "condition_snippet": "if (DataSizeOfVariable (CacheVariable->CurrPtr) == DataSize &&         (CompareMem (Data, GetVariabl"
+    },
+    {
+      "if_line": 2340,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2384,
+      "next_statement": "State = CacheVariable->CurrPtr->State;",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_APPEND_WRITE) != 0) {"
+    },
+    {
+      "if_line": 2368,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2374,
+      "next_statement": "CopyMem ((UINT8*) ((UINTN) BufferForMerge + DataSizeOfVariable (CacheVariable->CurrPtr)), Data, DataSize);",
+      "condition_snippet": "if (DataSizeOfVariable (CacheVariable->CurrPtr) + DataSize > MaxDataSize) {"
+    },
+    {
+      "if_line": 2401,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2403,
+      "next_statement": "if (!Variable->Volatile) {",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2413,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2416,
+      "next_statement": "if (DataSize == 0 || (Attributes & (EFI_VARIABLE_RUNTIME_ACCESS | EFI_VARIABLE_BOOTSERVICE_ACCESS)) == 0) {",
+      "condition_snippet": "if ((DataSize == 0) && ((Attributes & EFI_VARIABLE_APPEND_WRITE) != 0)) {"
+    },
+    {
+      "if_line": 2422,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2425,
+      "next_statement": "if (AtRuntime () &&",
+      "condition_snippet": "if (DataSize == 0 || (Attributes & (EFI_VARIABLE_RUNTIME_ACCESS | EFI_VARIABLE_BOOTSERVICE_ACCESS)) "
+    },
+    {
+      "if_line": 2430,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2434,
+      "next_statement": "}",
+      "condition_snippet": "if (AtRuntime () &&         (((Attributes & EFI_VARIABLE_RUNTIME_ACCESS) == 0) || ((Attributes & EFI"
+    },
+    {
+      "if_line": 2512,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2660,
+      "next_statement": "Volatile = TRUE;",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_NON_VOLATILE) != 0) {"
+    },
+    {
+      "if_line": 2524,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2569,
+      "next_statement": "CacheOffset = mVariableModuleGlobal->NonVolatileLastVariableOffset;",
+      "condition_snippet": "if ((((Attributes & EFI_VARIABLE_HARDWARE_ERROR_RECORD) != 0)       && ((VarSize + mVariableModuleGl"
+    },
+    {
+      "if_line": 2529,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2538,
+      "next_statement": "Status = Reclaim (",
+      "condition_snippet": "if (AtRuntime ()) {"
+    },
+    {
+      "if_line": 2550,
+      "pattern": "success-path",
+      "insertion_after_line": 2550,
+      "next_statement": "if (Variable->CurrPtr != NULL) {",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2591,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2593,
+      "next_statement": "NextVariable->State = VAR_HEADER_VALID_ONLY;",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2609,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2611,
+      "next_statement": "Status = UpdateVariableStore (",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2625,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2627,
+      "next_statement": "NextVariable->State = VAR_ADDED;",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2642,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2644,
+      "next_statement": "mVariableModuleGlobal->NonVolatileLastVariableOffset += HEADER_ALIGN (VarSize);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2666,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2690,
+      "next_statement": "NextVariable->State = VAR_ADDED;",
+      "condition_snippet": "if ((UINT32) (VarSize + mVariableModuleGlobal->VolatileLastVariableOffset) >         ((VARIABLE_STOR"
+    },
+    {
+      "if_line": 2679,
+      "pattern": "success-path",
+      "insertion_after_line": 2679,
+      "next_statement": "if (Variable->CurrPtr != NULL) {",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2703,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2705,
+      "next_statement": "mVariableModuleGlobal->VolatileLastVariableOffset += HEADER_ALIGN (VarSize);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2713,
+      "pattern": "success-path",
+      "insertion_after_line": 2713,
+      "next_statement": "if (Variable->InDeletedTransitionPtr != NULL) {",
+      "condition_snippet": "if (!EFI_ERROR (Status) && Variable->CurrPtr != NULL) {"
+    },
+    {
+      "if_line": 2714,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2738,
+      "next_statement": "State = Variable->CurrPtr->State;",
+      "condition_snippet": "if (Variable->InDeletedTransitionPtr != NULL) {"
+    },
+    {
+      "if_line": 2731,
+      "pattern": "success-path",
+      "insertion_after_line": 2731,
+      "next_statement": "if (!Variable->Volatile) {",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2752,
+      "pattern": "success-path",
+      "insertion_after_line": 2752,
+      "next_statement": "CacheVariable->CurrPtr->State = State;",
+      "condition_snippet": "if (!EFI_ERROR (Status) && !Variable->Volatile) {"
+    },
+    {
+      "if_line": 2757,
+      "pattern": "success-path",
+      "insertion_after_line": 2757,
+      "next_statement": "UpdateVariableInfo (VariableName, VendorGuid, Volatile, FALSE, TRUE, FALSE, FALSE);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2804,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2806,
+      "next_statement": "if (VariableName[0] == 0) {",
+      "condition_snippet": "if (VariableName == NULL || VendorGuid == NULL || DataSize == NULL) {"
+    },
+    {
+      "if_line": 2808,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2810,
+      "next_statement": "AcquireLockOnlyAtBootTime(&mVariableModuleGlobal->VariableGlobal.VariableServicesLock);",
+      "condition_snippet": "if (VariableName[0] == 0) {"
+    },
+    {
+      "if_line": 2815,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2817,
+      "next_statement": "VarDataSize = DataSizeOfVariable (Variable.CurrPtr);",
+      "condition_snippet": "if (Variable.CurrPtr == NULL || EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2825,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2841,
+      "next_statement": "*DataSize = VarDataSize;",
+      "condition_snippet": "if (*DataSize >= VarDataSize) {"
+    },
+    {
+      "if_line": 2826,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2829,
+      "next_statement": "CopyMem (Data, GetVariableDataPtr (Variable.CurrPtr), VarDataSize);",
+      "condition_snippet": "if (Data == NULL) {"
+    },
+    {
+      "if_line": 2885,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2900,
+      "next_statement": "if (VariableName[0] != 0) {",
+      "condition_snippet": "if (Variable.CurrPtr == NULL || EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2927,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2929,
+      "next_statement": "}",
+      "condition_snippet": "if ((VariableStoreHeader[Type] != NULL) && (Variable.StartPtr == GetStartPointer (VariableStoreHeade"
+    },
+    {
+      "if_line": 2936,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2938,
+      "next_statement": "}",
+      "condition_snippet": "if (VariableStoreHeader[Type] != NULL) {"
+    },
+    {
+      "if_line": 2945,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2948,
+      "next_statement": "Variable.StartPtr = GetStartPointer (VariableStoreHeader[Type]);",
+      "condition_snippet": "if (Type == VariableStoreTypeMax) {"
+    },
+    {
+      "if_line": 2957,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3003,
+      "next_statement": "Variable.CurrPtr = GetNextVariablePtr (Variable.CurrPtr);",
+      "condition_snippet": "if (Variable.CurrPtr->State == VAR_ADDED || Variable.CurrPtr->State == (VAR_IN_DELETED_TRANSITION & "
+    },
+    {
+      "if_line": 2958,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3002,
+      "next_statement": "}",
+      "condition_snippet": "if (!AtRuntime () || ((Variable.CurrPtr->Attributes & EFI_VARIABLE_RUNTIME_ACCESS) != 0)) {"
+    },
+    {
+      "if_line": 2959,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2977,
+      "next_statement": "if ((VariableStoreHeader[VariableStoreTypeHob] != NULL) && (VariableStoreHeader[VariableStoreTypeNv] != NULL) &&",
+      "condition_snippet": "if (Variable.CurrPtr->State == (VAR_IN_DELETED_TRANSITION & VAR_ADDED)) {"
+    },
+    {
+      "if_line": 2973,
+      "pattern": "success-path",
+      "insertion_after_line": 2973,
+      "next_statement": "Variable.CurrPtr = GetNextVariablePtr (Variable.CurrPtr);",
+      "condition_snippet": "if (!EFI_ERROR (Status) && VariablePtrTrack.CurrPtr->State == VAR_ADDED) {"
+    },
+    {
+      "if_line": 2982,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2997,
+      "next_statement": "*VariablePtr = Variable.CurrPtr;",
+      "condition_snippet": "if ((VariableStoreHeader[VariableStoreTypeHob] != NULL) && (VariableStoreHeader[VariableStoreTypeNv]"
+    },
+    {
+      "if_line": 2993,
+      "pattern": "success-path",
+      "insertion_after_line": 2993,
+      "next_statement": "Variable.CurrPtr = GetNextVariablePtr (Variable.CurrPtr);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3050,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3052,
+      "next_statement": "MaxLen = *VariableNameSize / sizeof (CHAR16);",
+      "condition_snippet": "if (VariableNameSize == NULL || VariableName == NULL || VendorGuid == NULL) {"
+    },
+    {
+      "if_line": 3058,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3064,
+      "next_statement": "AcquireLockOnlyAtBootTime(&mVariableModuleGlobal->VariableGlobal.VariableServicesLock);",
+      "condition_snippet": "if ((MaxLen == 0) || (StrnLenS (VariableName, MaxLen) == MaxLen)) {"
+    },
+    {
+      "if_line": 3069,
+      "pattern": "success-path",
+      "insertion_after_line": 3069,
+      "next_statement": "VarNameSize = NameSizeOfVariable (VariablePtr);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3131,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3133,
+      "next_statement": "if (DataSize != 0 && Data == NULL) {",
+      "condition_snippet": "if (VariableName == NULL || VariableName[0] == 0 || VendorGuid == NULL) {"
+    },
+    {
+      "if_line": 3135,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3137,
+      "next_statement": "if ((Attributes & (~(EFI_VARIABLE_ATTRIBUTES_MASK | EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS))) != 0) {",
+      "condition_snippet": "if (DataSize != 0 && Data == NULL) {"
+    },
+    {
+      "if_line": 3145,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3147,
+      "next_statement": "if ((Attributes & (EFI_VARIABLE_RUNTIME_ACCESS | EFI_VARIABLE_BOOTSERVICE_ACCESS)) == EFI_VARIABLE_RUNTIME_ACCESS) {",
+      "condition_snippet": "if ((Attributes & (~(EFI_VARIABLE_ATTRIBUTES_MASK | EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS))) != 0)"
+    },
+    {
+      "if_line": 3152,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3158,
+      "next_statement": "if (!mVariableModuleGlobal->VariableGlobal.AuthSupport) {",
+      "condition_snippet": "if ((Attributes & (EFI_VARIABLE_RUNTIME_ACCESS | EFI_VARIABLE_BOOTSERVICE_ACCESS)) == EFI_VARIABLE_R"
+    },
+    {
+      "if_line": 3153,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3155,
+      "next_statement": "return EFI_INVALID_PARAMETER;",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS) != 0) {"
+    },
+    {
+      "if_line": 3159,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3164,
+      "next_statement": "} else if ((Attributes & EFI_VARIABLE_HARDWARE_ERROR_RECORD) != 0) {",
+      "condition_snippet": "if (!mVariableModuleGlobal->VariableGlobal.AuthSupport) {"
+    },
+    {
+      "if_line": 3166,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3171,
+      "next_statement": "}",
+      "condition_snippet": "if (PcdGet32 (PcdHwErrStorageSize) == 0) {"
+    },
+    {
+      "if_line": 3178,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3181,
+      "next_statement": "if ((Attributes & EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS) == EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS) {",
+      "condition_snippet": "if (((Attributes & EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS) == EFI_VARIABLE_AUTHENTICATED_WRITE_ACCE"
+    },
+    {
+      "if_line": 3183,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3192,
+      "next_statement": "if (DataSize < OFFSET_OF_AUTHINFO2_CERT_DATA ||",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS) == EFI_VARIABLE_AUTHENTICATED_WRITE_ACCES"
+    },
+    {
+      "if_line": 3188,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3190,
+      "next_statement": "PayloadSize = DataSize - AUTHINFO_SIZE;",
+      "condition_snippet": "if (DataSize != AUTHINFO_SIZE) {"
+    },
+    {
+      "if_line": 3196,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3200,
+      "next_statement": "PayloadSize = DataSize - AUTHINFO2_SIZE (Data);",
+      "condition_snippet": "if (DataSize < OFFSET_OF_AUTHINFO2_CERT_DATA ||       ((EFI_VARIABLE_AUTHENTICATION_2 *) Data)->Auth"
+    },
+    {
+      "if_line": 3206,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3211,
+      "next_statement": "if ((Attributes & EFI_VARIABLE_HARDWARE_ERROR_RECORD) == EFI_VARIABLE_HARDWARE_ERROR_RECORD) {",
+      "condition_snippet": "if ((UINTN)(~0) - PayloadSize < StrSize(VariableName)){"
+    },
+    {
+      "if_line": 3218,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3222,
+      "next_statement": "if ((Attributes & VARIABLE_ATTRIBUTE_AT_AW) != 0) {",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_HARDWARE_ERROR_RECORD) == EFI_VARIABLE_HARDWARE_ERROR_RECORD) {"
+    },
+    {
+      "if_line": 3219,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3221,
+      "next_statement": "} else {",
+      "condition_snippet": "if (StrSize (VariableName) + PayloadSize > PcdGet32 (PcdMaxHardwareErrorVariableSize) - GetVariableH"
+    },
+    {
+      "if_line": 3227,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3231,
+      "next_statement": "if (StrSize (VariableName) + PayloadSize > mVariableModuleGlobal->MaxVariableSize - GetVariableHeaderSize ()) {",
+      "condition_snippet": "if ((Attributes & VARIABLE_ATTRIBUTE_AT_AW) != 0) {"
+    },
+    {
+      "if_line": 3228,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3230,
+      "next_statement": "} else if ((Attributes & EFI_VARIABLE_NON_VOLATILE) != 0) {",
+      "condition_snippet": "if (StrSize (VariableName) + PayloadSize > mVariableModuleGlobal->MaxAuthVariableSize - GetVariableH"
+    },
+    {
+      "if_line": 3232,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3234,
+      "next_statement": "} else {",
+      "condition_snippet": "if (StrSize (VariableName) + PayloadSize > mVariableModuleGlobal->MaxVariableSize - GetVariableHeade"
+    },
+    {
+      "if_line": 3236,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3238,
+      "next_statement": "}",
+      "condition_snippet": "if (StrSize (VariableName) + PayloadSize > mVariableModuleGlobal->MaxVolatileVariableSize - GetVaria"
+    },
+    {
+      "if_line": 3246,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3252,
+      "next_statement": "if (EFI_ERROR (Status)) {",
+      "condition_snippet": "if (Status == EFI_ALREADY_STARTED) {"
+    },
+    {
+      "if_line": 3253,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3255,
+      "next_statement": "Status = VarCheckLibSetVariableCheck (VariableName, VendorGuid, Attributes, PayloadSize, (VOID *) ((UINTN) Data + DataSize - PayloadSize), mRequestSource);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3258,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3260,
+      "next_statement": "AcquireLockOnlyAtBootTime(&mVariableModuleGlobal->VariableGlobal.VariableServicesLock);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3283,
+      "pattern": "success-path",
+      "insertion_after_line": 3283,
+      "next_statement": "if (((Variable.CurrPtr->Attributes & EFI_VARIABLE_RUNTIME_ACCESS) == 0) && AtRuntime ()) {",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3284,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3287,
+      "next_statement": "if (Attributes != 0 && (Attributes & (~EFI_VARIABLE_APPEND_WRITE)) != Variable.CurrPtr->Attributes) {",
+      "condition_snippet": "if (((Variable.CurrPtr->Attributes & EFI_VARIABLE_RUNTIME_ACCESS) == 0) && AtRuntime ()) {"
+    },
+    {
+      "if_line": 3288,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3298,
+      "next_statement": "}",
+      "condition_snippet": "if (Attributes != 0 && (Attributes & (~EFI_VARIABLE_APPEND_WRITE)) != Variable.CurrPtr->Attributes) "
+    },
+    {
+      "if_line": 3301,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3312,
+      "next_statement": "if (mVariableModuleGlobal->VariableGlobal.AuthSupport) {",
+      "condition_snippet": "if (!FeaturePcdGet (PcdUefiVariableDefaultLangDeprecate)) {"
+    },
+    {
+      "if_line": 3306,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3311,
+      "next_statement": "}",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3325,
+      "pattern": "success-path",
+      "insertion_after_line": 3325,
+      "next_statement": "SecureBootHook (",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3470,
+      "pattern": "success-path",
+      "insertion_after_line": 3470,
+      "next_statement": "if ((Variable->Attributes & EFI_VARIABLE_HARDWARE_ERROR_RECORD) == EFI_VARIABLE_HARDWARE_ERROR_RECORD) {",
+      "condition_snippet": "if (!EFI_ERROR (Status) && VariablePtrTrack.CurrPtr->State != VAR_ADDED) {"
+    },
+    {
+      "if_line": 3537,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3539,
+      "next_statement": "if ((Attributes & EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS) != 0) {",
+      "condition_snippet": "if(MaximumVariableStorageSize == NULL || RemainingVariableStorageSize == NULL || MaximumVariableSize"
+    },
+    {
+      "if_line": 3541,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3546,
+      "next_statement": "if ((Attributes & EFI_VARIABLE_ATTRIBUTES_MASK) == 0) {",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS) != 0) {"
+    },
+    {
+      "if_line": 3548,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3553,
+      "next_statement": "return EFI_INVALID_PARAMETER;",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_ATTRIBUTES_MASK) == 0) {"
+    },
+    {
+      "if_line": 3569,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3574,
+      "next_statement": "} else if ((Attributes & EFI_VARIABLE_HARDWARE_ERROR_RECORD) != 0) {",
+      "condition_snippet": "if (!mVariableModuleGlobal->VariableGlobal.AuthSupport) {"
+    },
+    {
+      "if_line": 3576,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3581,
+      "next_statement": "}",
+      "condition_snippet": "if (PcdGet32 (PcdHwErrStorageSize) == 0) {"
+    },
+    {
+      "if_line": 3617,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3619,
+      "next_statement": "Reclaimed = TRUE;",
+      "condition_snippet": "if (Reclaimed) {"
+    },
+    {
+      "if_line": 3662,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3665,
+      "next_statement": "return MAX (PcdGet32 (PcdMaxVariableSize), PcdGet32 (PcdMaxAuthVariableSize));",
+      "condition_snippet": "if (PcdGet32 (PcdHwErrStorageSize) != 0) {"
+    },
+    {
+      "if_line": 3736,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3738,
+      "next_statement": "NvStorageBase = (EFI_PHYSICAL_ADDRESS) PcdGet64 (PcdFlashNvStorageVariableBase64);",
+      "condition_snippet": "if (NvStorageData == NULL) {"
+    },
+    {
+      "if_line": 3787,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3791,
+      "next_statement": "VariableStoreBase = (UINTN) FvHeader + FvHeader->HeaderLength;",
+      "condition_snippet": "if ((FvHeader->Signature != EFI_FVH_SIGNATURE) || (!CompareGuid (&gEfiSystemNvDataFvGuid, &FvHeader-"
+    },
+    {
+      "if_line": 3799,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3805,
+      "next_statement": "ASSERT(mNvVariableCache->Size == VariableStoreLength);",
+      "condition_snippet": "if (GetVariableStoreStatus (mNvVariableCache) != EfiValid) {"
+    },
+    {
+      "if_line": 3894,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3961,
+      "next_statement": "}",
+      "condition_snippet": "if (mVariableModuleGlobal->VariableGlobal.HobVariableBase != 0) {"
+    },
+    {
+      "if_line": 3904,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3909,
+      "next_statement": "ASSERT ((Variable->Attributes & EFI_VARIABLE_NON_VOLATILE) != 0);",
+      "condition_snippet": "if (Variable->State != VAR_ADDED) {"
+    },
+    {
+      "if_line": 3936,
+      "pattern": "success-path",
+      "insertion_after_line": 3936,
+      "next_statement": "DEBUG ((EFI_D_INFO, \"Variable driver set the HOB variable to DELETED state in local: %g %s\\n\", GetVendorGuidPtr (Variable), GetVariableNamePtr (Variable)));",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 4002,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4019,
+      "next_statement": "}",
+      "condition_snippet": "if (Data != 0xff) {"
+    },
+    {
+      "if_line": 4014,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4017,
+      "next_statement": "break;",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 4033,
+      "pattern": "success-path",
+      "insertion_after_line": 4033,
+      "next_statement": "DEBUG ((EFI_D_INFO, \"Variable driver will work with auth variable support!\\n\"));",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 4055,
+      "pattern": "success-path",
+      "insertion_after_line": 4055,
+      "next_statement": "for (Index = 0; Index < ARRAY_SIZE (mVariableEntryProperty); Index++) {",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 4118,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4120,
+      "next_statement": "StartPtr = GetStartPointer (NormalVarStorage);",
+      "condition_snippet": "if (AuthVarStorage == NULL) {"
+    },
+    {
+      "if_line": 4234,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4249,
+      "next_statement": "return EFI_SUCCESS;",
+      "condition_snippet": "if (GuidHob != NULL) {"
+    },
+    {
+      "if_line": 4237,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4246,
+      "next_statement": "DEBUG ((EFI_D_ERROR, \"HOB Variable Store header is corrupted!\\n\"));",
+      "condition_snippet": "if (GetVariableStoreStatus (VariableStoreHeader) == EfiValid) {"
+    },
+    {
+      "if_line": 4243,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4245,
+      "next_statement": "} else {",
+      "condition_snippet": "if (mVariableModuleGlobal->VariableGlobal.HobVariableBase == 0) {"
+    },
+    {
+      "if_line": 4276,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4278,
+      "next_statement": "InitializeLock (&mVariableModuleGlobal->VariableGlobal.VariableServicesLock, TPL_NOTIFY);",
+      "condition_snippet": "if (mVariableModuleGlobal == NULL) {"
+    },
+    {
+      "if_line": 4287,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4290,
+      "next_statement": "if (mVariableModuleGlobal->VariableGlobal.AuthFormat) {",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 4313,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4317,
+      "next_statement": "mVariableModuleGlobal->MaxVolatileVariableSize = ((PcdGet32 (PcdMaxVolatileVariableSize) != 0) ?",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 4329,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4336,
+      "next_statement": "SetMem (VolatileVariableStore, PcdGet32 (PcdVariableStoreSize) + ScratchSize, 0xff);",
+      "condition_snippet": "if (VolatileVariableStore == NULL) {"
+    },
+    {
+      "if_line": 4387,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4389,
+      "next_statement": "Fvb = NULL;",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 4397,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4400,
+      "next_statement": "Status = Fvb->GetAttributes (Fvb, &Attributes);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 4406,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4408,
+      "next_statement": "Status = Fvb->GetPhysicalAddress (Fvb, &FvbBaseAddress);",
+      "condition_snippet": "if (EFI_ERROR (Status) || ((Attributes & EFI_FVB2_WRITE_STATUS) == 0)) {"
+    },
+    {
+      "if_line": 4414,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4416,
+      "next_statement": "Status = Fvb->GetBlockSize (Fvb, 0, &BlockSize, &NumberOfBlocks);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 4422,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4424,
+      "next_statement": "if ((Address >= FvbBaseAddress) && (Address < (FvbBaseAddress + BlockSize * NumberOfBlocks))) {",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 4426,
+      "pattern": "naive-guard",
+      "insertion_after_line": 4435,
+      "next_statement": "}",
+      "condition_snippet": "if ((Address >= FvbBaseAddress) && (Address < (FvbBaseAddress + BlockSize * NumberOfBlocks))) {"
+    }
+  ],
+  "MdeModulePkg_VariableSmm.c": [
+    {
+      "if_line": 283,
+      "pattern": "naive-guard",
+      "insertion_after_line": 285,
+      "next_statement": "BufferSize     = 0;",
+      "condition_snippet": "if ((NumberHandles == NULL) || (Buffer == NULL)) {"
+    },
+    {
+      "if_line": 297,
+      "pattern": "naive-guard",
+      "insertion_after_line": 299,
+      "next_statement": "*Buffer = AllocatePool (BufferSize);",
+      "condition_snippet": "if (EFI_ERROR(Status) && Status != EFI_BUFFER_TOO_SMALL) {"
+    },
+    {
+      "if_line": 302,
+      "pattern": "naive-guard",
+      "insertion_after_line": 304,
+      "next_statement": "Status = gSmst->SmmLocateHandle (",
+      "condition_snippet": "if (*Buffer == NULL) {"
+    },
+    {
+      "if_line": 358,
+      "pattern": "naive-guard",
+      "insertion_after_line": 360,
+      "next_statement": "VariableInfo = gVariableInfo;",
+      "condition_snippet": "if (InfoEntry == NULL) {"
+    },
+    {
+      "if_line": 363,
+      "pattern": "naive-guard",
+      "insertion_after_line": 365,
+      "next_statement": "StatisticsInfoSize = sizeof (VARIABLE_INFO_ENTRY);",
+      "condition_snippet": "if (VariableInfo == NULL) {"
+    },
+    {
+      "if_line": 368,
+      "pattern": "naive-guard",
+      "insertion_after_line": 371,
+      "next_statement": "InfoName = (CHAR16 *)(InfoEntry + 1);",
+      "condition_snippet": "if (*InfoSize < StatisticsInfoSize) {"
+    },
+    {
+      "if_line": 377,
+      "pattern": "naive-guard",
+      "insertion_after_line": 391,
+      "next_statement": "while (VariableInfo != NULL) {",
+      "condition_snippet": "if (IsZeroGuid (&VendorGuid)) {"
+    },
+    {
+      "if_line": 383,
+      "pattern": "naive-guard",
+      "insertion_after_line": 386,
+      "next_statement": "CopyMem (InfoEntry, VariableInfo, sizeof (VARIABLE_INFO_ENTRY));",
+      "condition_snippet": "if (*InfoSize < StatisticsInfoSize) {"
+    },
+    {
+      "if_line": 397,
+      "pattern": "naive-guard",
+      "insertion_after_line": 408,
+      "next_statement": "VariableInfo = VariableInfo->Next;",
+      "condition_snippet": "if (CompareGuid (&VariableInfo->VendorGuid, &VendorGuid)) {"
+    },
+    {
+      "if_line": 399,
+      "pattern": "naive-guard",
+      "insertion_after_line": 407,
+      "next_statement": "}",
+      "condition_snippet": "if (NameSize <= InfoNameMaxSize) {"
+    },
+    {
+      "if_line": 400,
+      "pattern": "naive-guard",
+      "insertion_after_line": 406,
+      "next_statement": "}",
+      "condition_snippet": "if (CompareMem (VariableInfo->Name, InfoName, NameSize) == 0) {"
+    },
+    {
+      "if_line": 412,
+      "pattern": "naive-guard",
+      "insertion_after_line": 415,
+      "next_statement": "NameSize = StrSize (VariableInfo->Name);",
+      "condition_snippet": "if (VariableInfo == NULL) {"
+    },
+    {
+      "if_line": 422,
+      "pattern": "naive-guard",
+      "insertion_after_line": 425,
+      "next_statement": "CopyMem (InfoEntry, VariableInfo, sizeof (VARIABLE_INFO_ENTRY));",
+      "condition_snippet": "if (*InfoSize < StatisticsInfoSize) {"
+    },
+    {
+      "if_line": 487,
+      "pattern": "naive-guard",
+      "insertion_after_line": 489,
+      "next_statement": "TempCommBufferSize = *CommBufferSize;",
+      "condition_snippet": "if (CommBuffer == NULL || CommBufferSize == NULL) {"
+    },
+    {
+      "if_line": 493,
+      "pattern": "naive-guard",
+      "insertion_after_line": 496,
+      "next_statement": "CommBufferPayloadSize = TempCommBufferSize - SMM_VARIABLE_COMMUNICATE_HEADER_SIZE;",
+      "condition_snippet": "if (TempCommBufferSize < SMM_VARIABLE_COMMUNICATE_HEADER_SIZE) {"
+    },
+    {
+      "if_line": 498,
+      "pattern": "naive-guard",
+      "insertion_after_line": 501,
+      "next_statement": "if (!SmmIsBufferOutsideSmmValid ((UINTN)CommBuffer, TempCommBufferSize)) {",
+      "condition_snippet": "if (CommBufferPayloadSize > mVariableBufferPayloadSize) {"
+    },
+    {
+      "if_line": 503,
+      "pattern": "naive-guard",
+      "insertion_after_line": 506,
+      "next_statement": "SmmVariableFunctionHeader = (SMM_VARIABLE_COMMUNICATE_HEADER *)CommBuffer;",
+      "condition_snippet": "if (!SmmIsBufferOutsideSmmValid ((UINTN)CommBuffer, TempCommBufferSize)) {"
+    },
+    {
+      "if_line": 511,
+      "pattern": "naive-guard",
+      "insertion_after_line": 514,
+      "next_statement": "CopyMem (mVariableBufferPayload, SmmVariableFunctionHeader->Data, CommBufferPayloadSize);",
+      "condition_snippet": "if (CommBufferPayloadSize < OFFSET_OF(SMM_VARIABLE_COMMUNICATE_ACCESS_VARIABLE, Name)) {"
+    },
+    {
+      "if_line": 520,
+      "pattern": "naive-guard",
+      "insertion_after_line": 527,
+      "next_statement": "InfoSize = OFFSET_OF(SMM_VARIABLE_COMMUNICATE_ACCESS_VARIABLE, Name)",
+      "condition_snippet": "if (((UINTN)(~0) - SmmVariableHeader->DataSize < OFFSET_OF(SMM_VARIABLE_COMMUNICATE_ACCESS_VARIABLE,"
+    },
+    {
+      "if_line": 534,
+      "pattern": "naive-guard",
+      "insertion_after_line": 538,
+      "next_statement": "if (SmmVariableHeader->NameSize < sizeof (CHAR16) || SmmVariableHeader->Name[SmmVariableHeader->NameSize/sizeof (CHAR16) - 1] != L'\\0') {",
+      "condition_snippet": "if (InfoSize > CommBufferPayloadSize) {"
+    },
+    {
+      "if_line": 540,
+      "pattern": "naive-guard",
+      "insertion_after_line": 546,
+      "next_statement": "Status = VariableServiceGetVariable (",
+      "condition_snippet": "if (SmmVariableHeader->NameSize < sizeof (CHAR16) || SmmVariableHeader->Name[SmmVariableHeader->Name"
+    },
+    {
+      "if_line": 559,
+      "pattern": "naive-guard",
+      "insertion_after_line": 562,
+      "next_statement": "CopyMem (mVariableBufferPayload, SmmVariableFunctionHeader->Data, CommBufferPayloadSize);",
+      "condition_snippet": "if (CommBufferPayloadSize < OFFSET_OF(SMM_VARIABLE_COMMUNICATE_GET_NEXT_VARIABLE_NAME, Name)) {"
+    },
+    {
+      "if_line": 568,
+      "pattern": "naive-guard",
+      "insertion_after_line": 574,
+      "next_statement": "InfoSize = OFFSET_OF(SMM_VARIABLE_COMMUNICATE_GET_NEXT_VARIABLE_NAME, Name) + GetNextVariableName->NameSize;",
+      "condition_snippet": "if ((UINTN)(~0) - GetNextVariableName->NameSize < OFFSET_OF(SMM_VARIABLE_COMMUNICATE_GET_NEXT_VARIAB"
+    },
+    {
+      "if_line": 580,
+      "pattern": "naive-guard",
+      "insertion_after_line": 584,
+      "next_statement": "NameBufferSize = CommBufferPayloadSize - OFFSET_OF(SMM_VARIABLE_COMMUNICATE_GET_NEXT_VARIABLE_NAME, Name);",
+      "condition_snippet": "if (InfoSize > CommBufferPayloadSize) {"
+    },
+    {
+      "if_line": 587,
+      "pattern": "naive-guard",
+      "insertion_after_line": 593,
+      "next_statement": "Status = VariableServiceGetNextVariableName (",
+      "condition_snippet": "if (NameBufferSize < sizeof (CHAR16) || GetNextVariableName->Name[NameBufferSize/sizeof (CHAR16) - 1"
+    },
+    {
+      "if_line": 604,
+      "pattern": "naive-guard",
+      "insertion_after_line": 607,
+      "next_statement": "CopyMem (mVariableBufferPayload, SmmVariableFunctionHeader->Data, CommBufferPayloadSize);",
+      "condition_snippet": "if (CommBufferPayloadSize < OFFSET_OF(SMM_VARIABLE_COMMUNICATE_ACCESS_VARIABLE, Name)) {"
+    },
+    {
+      "if_line": 613,
+      "pattern": "naive-guard",
+      "insertion_after_line": 620,
+      "next_statement": "InfoSize = OFFSET_OF(SMM_VARIABLE_COMMUNICATE_ACCESS_VARIABLE, Name)",
+      "condition_snippet": "if (((UINTN)(~0) - SmmVariableHeader->DataSize < OFFSET_OF(SMM_VARIABLE_COMMUNICATE_ACCESS_VARIABLE,"
+    },
+    {
+      "if_line": 628,
+      "pattern": "naive-guard",
+      "insertion_after_line": 632,
+      "next_statement": "if (SmmVariableHeader->NameSize < sizeof (CHAR16) || SmmVariableHeader->Name[SmmVariableHeader->NameSize/sizeof (CHAR16) - 1] != L'\\0') {",
+      "condition_snippet": "if (InfoSize > CommBufferPayloadSize) {"
+    },
+    {
+      "if_line": 634,
+      "pattern": "naive-guard",
+      "insertion_after_line": 640,
+      "next_statement": "Status = VariableServiceSetVariable (",
+      "condition_snippet": "if (SmmVariableHeader->NameSize < sizeof (CHAR16) || SmmVariableHeader->Name[SmmVariableHeader->Name"
+    },
+    {
+      "if_line": 652,
+      "pattern": "naive-guard",
+      "insertion_after_line": 655,
+      "next_statement": "QueryVariableInfo = (SMM_VARIABLE_COMMUNICATE_QUERY_VARIABLE_INFO *) SmmVariableFunctionHeader->Data;",
+      "condition_snippet": "if (CommBufferPayloadSize < sizeof (SMM_VARIABLE_COMMUNICATE_QUERY_VARIABLE_INFO)) {"
+    },
+    {
+      "if_line": 667,
+      "pattern": "naive-guard",
+      "insertion_after_line": 670,
+      "next_statement": "GetPayloadSize = (SMM_VARIABLE_COMMUNICATE_GET_PAYLOAD_SIZE *) SmmVariableFunctionHeader->Data;",
+      "condition_snippet": "if (CommBufferPayloadSize < sizeof (SMM_VARIABLE_COMMUNICATE_GET_PAYLOAD_SIZE)) {"
+    },
+    {
+      "if_line": 677,
+      "pattern": "naive-guard",
+      "insertion_after_line": 680,
+      "next_statement": "if (!mEndOfDxe) {",
+      "condition_snippet": "if (AtRuntime()) {"
+    },
+    {
+      "if_line": 742,
+      "pattern": "naive-guard",
+      "insertion_after_line": 745,
+      "next_statement": "CopyMem (mVariableBufferPayload, SmmVariableFunctionHeader->Data, CommBufferPayloadSize);",
+      "condition_snippet": "if (CommBufferPayloadSize < OFFSET_OF (SMM_VARIABLE_COMMUNICATE_VAR_CHECK_VARIABLE_PROPERTY, Name)) "
+    },
+    {
+      "if_line": 751,
+      "pattern": "naive-guard",
+      "insertion_after_line": 757,
+      "next_statement": "InfoSize = OFFSET_OF (SMM_VARIABLE_COMMUNICATE_VAR_CHECK_VARIABLE_PROPERTY, Name) + CommVariableProperty->NameSize;",
+      "condition_snippet": "if ((UINTN) (~0) - CommVariableProperty->NameSize < OFFSET_OF (SMM_VARIABLE_COMMUNICATE_VAR_CHECK_VA"
+    },
+    {
+      "if_line": 763,
+      "pattern": "naive-guard",
+      "insertion_after_line": 767,
+      "next_statement": "if (CommVariableProperty->NameSize < sizeof (CHAR16) || CommVariableProperty->Name[CommVariableProperty->NameSize/sizeof (CHAR16) - 1] != L'\\0') {",
+      "condition_snippet": "if (InfoSize > CommBufferPayloadSize) {"
+    },
+    {
+      "if_line": 769,
+      "pattern": "naive-guard",
+      "insertion_after_line": 775,
+      "next_statement": "Status = VarCheckVariablePropertyGet (",
+      "condition_snippet": "if (CommVariableProperty->NameSize < sizeof (CHAR16) || CommVariableProperty->Name[CommVariablePrope"
+    },
+    {
+      "if_line": 857,
+      "pattern": "naive-guard",
+      "insertion_after_line": 859,
+      "next_statement": "Status = GetFtwProtocol ((VOID **)&FtwProtocol);",
+      "condition_snippet": "if (mVariableModuleGlobal->FvbInstance != NULL) {"
+    },
+    {
+      "if_line": 865,
+      "pattern": "naive-guard",
+      "insertion_after_line": 867,
+      "next_statement": "Status = FtwProtocol->GetMaxBlockSize (FtwProtocol, &FtwMaxBlockSize);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 870,
+      "pattern": "success-path",
+      "insertion_after_line": 870,
+      "next_statement": "ASSERT (PcdGet32 (PcdFlashNvStorageVariableSize) <= FtwMaxBlockSize);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 882,
+      "pattern": "naive-guard",
+      "insertion_after_line": 884,
+      "next_statement": "mVariableModuleGlobal->FvbInstance = FvbProtocol;",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    }
+  ],
+  "SecurityPkg_Variable.c": [
+    {
+      "if_line": 154,
+      "pattern": "naive-guard",
+      "insertion_after_line": 213,
+      "next_statement": "}",
+      "condition_snippet": "if (FeaturePcdGet (PcdVariableCollectStatistics)) {"
+    },
+    {
+      "if_line": 156,
+      "pattern": "naive-guard",
+      "insertion_after_line": 159,
+      "next_statement": "if (gVariableInfo == NULL) {",
+      "condition_snippet": "if (AtRuntime ()) {"
+    },
+    {
+      "if_line": 178,
+      "pattern": "naive-guard",
+      "insertion_after_line": 195,
+      "next_statement": "if (Entry->Next == NULL) {",
+      "condition_snippet": "if (CompareGuid (VendorGuid, &Entry->VendorGuid)) {"
+    },
+    {
+      "if_line": 179,
+      "pattern": "naive-guard",
+      "insertion_after_line": 194,
+      "next_statement": "}",
+      "condition_snippet": "if (StrCmp (VariableName, Entry->Name) == 0) {"
+    },
+    {
+      "if_line": 234,
+      "pattern": "naive-guard",
+      "insertion_after_line": 240,
+      "next_statement": "return TRUE;",
+      "condition_snippet": "if ((Variable == NULL) || (Variable >= VariableStoreEnd) || (Variable->StartId != VARIABLE_DATA)) {"
+    },
+    {
+      "if_line": 296,
+      "pattern": "naive-guard",
+      "insertion_after_line": 315,
+      "next_statement": "VolatileBase = (VARIABLE_STORE_HEADER *) ((UINTN) mVariableModuleGlobal->VariableGlobal.VolatileVariableBase);",
+      "condition_snippet": "if (!Volatile) {"
+    },
+    {
+      "if_line": 297,
+      "pattern": "naive-guard",
+      "insertion_after_line": 299,
+      "next_statement": "Status = Fvb->GetPhysicalAddress(Fvb, &FvVolHdr);",
+      "condition_snippet": "if (Fvb == NULL) {"
+    },
+    {
+      "if_line": 312,
+      "pattern": "naive-guard",
+      "insertion_after_line": 314,
+      "next_statement": "} else {",
+      "condition_snippet": "if ((DataPtr + DataSize) >= ((EFI_PHYSICAL_ADDRESS) (UINTN) ((UINT8 *) FwVolHeader + FwVolHeader->Fv"
+    },
+    {
+      "if_line": 325,
+      "pattern": "naive-guard",
+      "insertion_after_line": 327,
+      "next_statement": "CopyMem ((UINT8 *)(UINTN)DataPtr, Buffer, DataSize);",
+      "condition_snippet": "if ((DataPtr + DataSize) >= ((UINTN) ((UINT8 *) VolatileBase + VolatileBase->Size))) {"
+    },
+    {
+      "if_line": 345,
+      "pattern": "naive-guard",
+      "insertion_after_line": 347,
+      "next_statement": "for (PtrBlockMapEntry = FwVolHeader->BlockMap; PtrBlockMapEntry->NumBlocks != 0; PtrBlockMapEntry++) {",
+      "condition_snippet": "if (CurrWritePtr < LinearOffset) {"
+    },
+    {
+      "if_line": 355,
+      "pattern": "naive-guard",
+      "insertion_after_line": 382,
+      "next_statement": "LinearOffset += PtrBlockMapEntry->Length;",
+      "condition_snippet": "if ((CurrWritePtr >= LinearOffset) && (CurrWritePtr < LinearOffset + PtrBlockMapEntry->Length)) {"
+    },
+    {
+      "if_line": 356,
+      "pattern": "naive-guard",
+      "insertion_after_line": 365,
+      "next_statement": "Size = (UINT32) (LinearOffset + PtrBlockMapEntry->Length - CurrWritePtr);",
+      "condition_snippet": "if ((CurrWritePtr + CurrWriteSize) <= (LinearOffset + PtrBlockMapEntry->Length)) {"
+    },
+    {
+      "if_line": 374,
+      "pattern": "naive-guard",
+      "insertion_after_line": 376,
+      "next_statement": "CurrWritePtr  = LinearOffset + PtrBlockMapEntry->Length;",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 409,
+      "pattern": "naive-guard",
+      "insertion_after_line": 415,
+      "next_statement": "((UINT32 *)(&VarStoreHeader->Signature))[1] == 0xffffffff &&",
+      "condition_snippet": "if (CompareGuid (&VarStoreHeader->Signature, &gEfiAuthenticatedVariableGuid) &&       VarStoreHeader"
+    },
+    {
+      "if_line": 445,
+      "pattern": "naive-guard",
+      "insertion_after_line": 450,
+      "next_statement": "return (UINTN) Variable->NameSize;",
+      "condition_snippet": "if (Variable->State    == (UINT8) (-1) ||       Variable->DataSize == (UINT32) (-1) ||       Variabl"
+    },
+    {
+      "if_line": 468,
+      "pattern": "naive-guard",
+      "insertion_after_line": 473,
+      "next_statement": "return (UINTN) Variable->DataSize;",
+      "condition_snippet": "if (Variable->State    == (UINT8)  (-1) ||       Variable->DataSize == (UINT32) (-1) ||       Variab"
+    },
+    {
+      "if_line": 612,
+      "pattern": "naive-guard",
+      "insertion_after_line": 614,
+      "next_statement": "Variable = GetStartPointer ((VARIABLE_STORE_HEADER *) (UINTN) mVariableModuleGlobal->VariableGlobal.NonVolatileVariableBase);",
+      "condition_snippet": "if (PubKeyIndex > mPubKeyNumber) {"
+    },
+    {
+      "if_line": 620,
+      "pattern": "naive-guard",
+      "insertion_after_line": 623,
+      "next_statement": "Variable = GetNextVariablePtr (Variable);",
+      "condition_snippet": "if ((Variable->State == VAR_ADDED || Variable->State == (VAR_IN_DELETED_TRANSITION & VAR_ADDED)) && "
+    },
+    {
+      "if_line": 690,
+      "pattern": "naive-guard",
+      "insertion_after_line": 692,
+      "next_statement": "if (NewPubKeyNumber != 0) {",
+      "condition_snippet": "if (NewPubKeyNumber == PubKeyNumber) {"
+    },
+    {
+      "if_line": 701,
+      "pattern": "naive-guard",
+      "insertion_after_line": 703,
+      "next_statement": "*NewPubKeyIndex = AllocateZeroPool ((PubKeyNumber + 1) * sizeof (UINT32));",
+      "condition_snippet": "if (*NewPubKeyStore == NULL) {"
+    },
+    {
+      "if_line": 706,
+      "pattern": "naive-guard",
+      "insertion_after_line": 710,
+      "next_statement": "CopiedKey = 0;",
+      "condition_snippet": "if (*NewPubKeyIndex == NULL) {"
+    },
+    {
+      "if_line": 799,
+      "pattern": "naive-guard",
+      "insertion_after_line": 835,
+      "next_statement": "MaximumBufferSize = mNvVariableCache->Size;",
+      "condition_snippet": "if (IsVolatile) {"
+    },
+    {
+      "if_line": 832,
+      "pattern": "naive-guard",
+      "insertion_after_line": 834,
+      "next_statement": "} else {",
+      "condition_snippet": "if (ValidBuffer == NULL) {"
+    },
+    {
+      "if_line": 852,
+      "pattern": "naive-guard",
+      "insertion_after_line": 914,
+      "next_statement": "Variable = GetStartPointer (VariableStoreHeader);",
+      "condition_snippet": "if (ReclaimPubKeyStore) {"
+    },
+    {
+      "if_line": 864,
+      "pattern": "naive-guard",
+      "insertion_after_line": 866,
+      "next_statement": "ASSERT ((NewPubKeyIndex != NULL) && (NewPubKeyStore != NULL));",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 875,
+      "pattern": "naive-guard",
+      "insertion_after_line": 895,
+      "next_statement": "Variable = NextVariable;",
+      "condition_snippet": "if (Variable->State == VAR_ADDED || Variable->State == (VAR_IN_DELETED_TRANSITION & VAR_ADDED)) {"
+    },
+    {
+      "if_line": 876,
+      "pattern": "naive-guard",
+      "insertion_after_line": 884,
+      "next_statement": "VariableSize = (UINTN) NextVariable - (UINTN) Variable;",
+      "condition_snippet": "if ((StrCmp (GetVariableNamePtr (Variable), AUTHVAR_KEYDB_NAME) == 0) &&              (CompareGuid ("
+    },
+    {
+      "if_line": 903,
+      "pattern": "naive-guard",
+      "insertion_after_line": 906,
+      "next_statement": "CopyMem (CurrPtr, (UINT8*) PubKeyHeader, sizeof (VARIABLE_HEADER));",
+      "condition_snippet": "if (PubKeyHeader == NULL) {"
+    },
+    {
+      "if_line": 940,
+      "pattern": "naive-guard",
+      "insertion_after_line": 979,
+      "next_statement": "Variable = NextVariable;",
+      "condition_snippet": "if (Variable != UpdatingVariable && Variable != UpdatingInDeletedTransition && Variable->State == (V"
+    },
+    {
+      "if_line": 953,
+      "pattern": "naive-guard",
+      "insertion_after_line": 962,
+      "next_statement": "AddedVariable = NextAddedVariable;",
+      "condition_snippet": "if (CompareGuid (&AddedVariable->VendorGuid, &Variable->VendorGuid) &&               NameSize == Nam"
+    },
+    {
+      "if_line": 958,
+      "pattern": "naive-guard",
+      "insertion_after_line": 961,
+      "next_statement": "}",
+      "condition_snippet": "if (CompareMem (Point0, Point1, NameSize) == 0) {"
+    },
+    {
+      "if_line": 987,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1018,
+      "next_statement": "}",
+      "condition_snippet": "if (NewVariable != NULL) {"
+    },
+    {
+      "if_line": 988,
+      "pattern": "naive-guard",
+      "insertion_after_line": 994,
+      "next_statement": "if (!IsVolatile) {",
+      "condition_snippet": "if ((UINTN) (CurrPtr - ValidBuffer) + NewVariableSize > VariableStoreHeader->Size) {"
+    },
+    {
+      "if_line": 995,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1009,
+      "next_statement": "CopyMem (CurrPtr, (UINT8 *) NewVariable, NewVariableSize);",
+      "condition_snippet": "if (!IsVolatile) {"
+    },
+    {
+      "if_line": 1001,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1008,
+      "next_statement": "}",
+      "condition_snippet": "if ((HwErrVariableTotalSize > PcdGet32 (PcdHwErrStorageSize)) ||             (CommonVariableTotalSiz"
+    },
+    {
+      "if_line": 1037,
+      "pattern": "success-path",
+      "insertion_after_line": 1037,
+      "next_statement": "*LastVariableOffset = (UINTN) (CurrPtr - ValidBuffer);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 1112,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1139,
+      "next_statement": "}",
+      "condition_snippet": "if (PtrTrack->CurrPtr->State == VAR_ADDED ||         PtrTrack->CurrPtr->State == (VAR_IN_DELETED_TRA"
+    },
+    {
+      "if_line": 1115,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1138,
+      "next_statement": "}",
+      "condition_snippet": "if (IgnoreRtCheck || !AtRuntime () || ((PtrTrack->CurrPtr->Attributes & EFI_VARIABLE_RUNTIME_ACCESS)"
+    },
+    {
+      "if_line": 1116,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1123,
+      "next_statement": "if (CompareGuid (VendorGuid, &PtrTrack->CurrPtr->VendorGuid)) {",
+      "condition_snippet": "if (VariableName[0] == 0) {"
+    },
+    {
+      "if_line": 1124,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1136,
+      "next_statement": "}",
+      "condition_snippet": "if (CompareGuid (VendorGuid, &PtrTrack->CurrPtr->VendorGuid)) {"
+    },
+    {
+      "if_line": 1128,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1135,
+      "next_statement": "}",
+      "condition_snippet": "if (CompareMem (VariableName, Point, NameSizeOfVariable (PtrTrack->CurrPtr)) == 0) {"
+    },
+    {
+      "if_line": 1186,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1188,
+      "next_statement": "VariableStoreHeader[VariableStoreTypeVolatile] = (VARIABLE_STORE_HEADER *) (UINTN) Global->VolatileVariableBase;",
+      "condition_snippet": "if (VariableName[0] != 0 && VendorGuid == NULL) {"
+    },
+    {
+      "if_line": 1203,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1205,
+      "next_statement": "PtrTrack->StartPtr = GetStartPointer (VariableStoreHeader[Type]);",
+      "condition_snippet": "if (VariableStoreHeader[Type] == NULL) {"
+    },
+    {
+      "if_line": 1212,
+      "pattern": "success-path",
+      "insertion_after_line": 1212,
+      "next_statement": "return Status;",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 1256,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1269,
+      "next_statement": "Index = 0;",
+      "condition_snippet": "if (Iso639Language) {"
+    },
+    {
+      "if_line": 1259,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1265,
+      "next_statement": "}",
+      "condition_snippet": "if (AsciiStrnCmp (Lang, SupportedLang + Index, CompareLength) == 0) {"
+    },
+    {
+      "if_line": 1286,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1292,
+      "next_statement": "}",
+      "condition_snippet": "if ((CompareLength == LanguageLength) &&           (AsciiStrnCmp (Lang, SupportedLang, CompareLength"
+    },
+    {
+      "if_line": 1338,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1348,
+      "next_statement": "while (TRUE) {",
+      "condition_snippet": "if (Iso639Language) {"
+    },
+    {
+      "if_line": 1356,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1363,
+      "next_statement": "if (SubIndex == Index) {",
+      "condition_snippet": "if ((*Supported == '\\0') && (SubIndex != Index)) {"
+    },
+    {
+      "if_line": 1364,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1372,
+      "next_statement": "SubIndex++;",
+      "condition_snippet": "if (SubIndex == Index) {"
+    },
+    {
+      "if_line": 1437,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1439,
+      "next_statement": "VA_START (Args, Iso639Language);",
+      "condition_snippet": "if (SupportedLanguages == NULL) {"
+    },
+    {
+      "if_line": 1467,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1482,
+      "next_statement": "if (AsciiStrnCmp (Supported, Language, LanguageLength) == 0) {",
+      "condition_snippet": "if (!Iso639Language) {"
+    },
+    {
+      "if_line": 1479,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1481,
+      "next_statement": "}",
+      "condition_snippet": "if (LanguageLength > CompareLength) {"
+    },
+    {
+      "if_line": 1486,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1492,
+      "next_statement": "}",
+      "condition_snippet": "if (AsciiStrnCmp (Supported, Language, LanguageLength) == 0) {"
+    },
+    {
+      "if_line": 1587,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1592,
+      "next_statement": "return FALSE;",
+      "condition_snippet": "if (RemainingVariableStorageSize >= TotalNeededSize) {"
+    },
+    {
+      "if_line": 1615,
+      "pattern": "success-path",
+      "insertion_after_line": 1615,
+      "next_statement": "NextVariable = GetNextVariablePtr (VariablePtrTrack.CurrPtr);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 1626,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1632,
+      "next_statement": "RemainingVariableStorageSize -= VariableEntry->VariableSize;",
+      "condition_snippet": "if (VariableEntry->VariableSize > RemainingVariableStorageSize) {"
+    },
+    {
+      "if_line": 1683,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1685,
+      "next_statement": "SetLanguageCodes = FALSE;",
+      "condition_snippet": "if (DataSize == 0) {"
+    },
+    {
+      "if_line": 1689,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1719,
+      "next_statement": "if (AtRuntime ()) {",
+      "condition_snippet": "if (StrCmp (VariableName, EFI_PLATFORM_LANG_CODES_VARIABLE_NAME) == 0) {"
+    },
+    {
+      "if_line": 1693,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1695,
+      "next_statement": "SetLanguageCodes = TRUE;",
+      "condition_snippet": "if (AtRuntime ()) {"
+    },
+    {
+      "if_line": 1723,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1725,
+      "next_statement": "SetLanguageCodes = TRUE;",
+      "condition_snippet": "if (AtRuntime ()) {"
+    },
+    {
+      "if_line": 1740,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1771,
+      "next_statement": "Status = EFI_SUCCESS;",
+      "condition_snippet": "if (SetLanguageCodes       && (mVariableModuleGlobal->PlatformLangCodes != NULL)       && (mVariable"
+    },
+    {
+      "if_line": 1748,
+      "pattern": "success-path",
+      "insertion_after_line": 1748,
+      "next_statement": "VariableName = EFI_PLATFORM_LANG_VARIABLE_NAME;",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 1757,
+      "pattern": "success-path",
+      "insertion_after_line": 1757,
+      "next_statement": "VariableName = EFI_LANG_VARIABLE_NAME;",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 1879,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1884,
+      "next_statement": "return Status;",
+      "condition_snippet": "if (SetLanguageCodes) {"
+    },
+    {
+      "if_line": 1941,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1957,
+      "next_statement": "if ((CacheVariable->CurrPtr == NULL) || CacheVariable->Volatile) {",
+      "condition_snippet": "if (mVariableModuleGlobal->FvbInstance == NULL) {"
+    },
+    {
+      "if_line": 1945,
+      "pattern": "naive-guard",
+      "insertion_after_line": 1950,
+      "next_statement": "return EFI_NOT_AVAILABLE_YET;",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_NON_VOLATILE) != 0) {"
+    },
+    {
+      "if_line": 1991,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2194,
+      "next_statement": "if ((DataSize == 0) && ((Attributes & EFI_VARIABLE_APPEND_WRITE) != 0)) {",
+      "condition_snippet": "if (Variable->CurrPtr != NULL) {"
+    },
+    {
+      "if_line": 1995,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2020,
+      "next_statement": "if ((((Attributes & EFI_VARIABLE_APPEND_WRITE) == 0) && (DataSize == 0))|| ((Attributes & (EFI_VARIABLE_RUNTIME_ACCESS | EFI_VARIABLE_BOOTSERVICE_ACCESS)) == 0)) {",
+      "condition_snippet": "if (AtRuntime ()) {"
+    },
+    {
+      "if_line": 2001,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2004,
+      "next_statement": "if ((Variable->CurrPtr->Attributes & EFI_VARIABLE_NON_VOLATILE) == 0) {",
+      "condition_snippet": "if (Variable->Volatile) {"
+    },
+    {
+      "if_line": 2008,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2011,
+      "next_statement": "if ((Variable->CurrPtr->Attributes & EFI_VARIABLE_RUNTIME_ACCESS) == 0) {",
+      "condition_snippet": "if ((Variable->CurrPtr->Attributes & EFI_VARIABLE_NON_VOLATILE) == 0) {"
+    },
+    {
+      "if_line": 2016,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2019,
+      "next_statement": "}",
+      "condition_snippet": "if ((Variable->CurrPtr->Attributes & EFI_VARIABLE_RUNTIME_ACCESS) == 0) {"
+    },
+    {
+      "if_line": 2028,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2075,
+      "next_statement": "if (DataSizeOfVariable (Variable->CurrPtr) == DataSize &&",
+      "condition_snippet": "if ((((Attributes & EFI_VARIABLE_APPEND_WRITE) == 0) && (DataSize == 0))|| ((Attributes & (EFI_VARIA"
+    },
+    {
+      "if_line": 2029,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2053,
+      "next_statement": "State = Variable->CurrPtr->State;",
+      "condition_snippet": "if (Variable->InDeletedTransitionPtr != NULL) {"
+    },
+    {
+      "if_line": 2045,
+      "pattern": "success-path",
+      "insertion_after_line": 2045,
+      "next_statement": "if (!Variable->Volatile) {",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2067,
+      "pattern": "success-path",
+      "insertion_after_line": 2067,
+      "next_statement": "UpdateVariableInfo (VariableName, VendorGuid, Variable->Volatile, FALSE, FALSE, TRUE, FALSE);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2080,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2090,
+      "next_statement": "(Variable->CurrPtr->State == (VAR_ADDED & VAR_IN_DELETED_TRANSITION))) {",
+      "condition_snippet": "if (DataSizeOfVariable (Variable->CurrPtr) == DataSize &&         (CompareMem (Data, GetVariableData"
+    },
+    {
+      "if_line": 2096,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2170,
+      "next_statement": "State = Variable->CurrPtr->State;",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_APPEND_WRITE) != 0) {"
+    },
+    {
+      "if_line": 2110,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2144,
+      "next_statement": "if ((Attributes & EFI_VARIABLE_HARDWARE_ERROR_RECORD) == EFI_VARIABLE_HARDWARE_ERROR_RECORD) {",
+      "condition_snippet": "if ((CompareGuid (VendorGuid, &gEfiImageSecurityDatabaseGuid) &&             ((StrCmp (VariableName,"
+    },
+    {
+      "if_line": 2125,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2131,
+      "next_statement": "if (MergedBufSize == Variable->CurrPtr->DataSize) {",
+      "condition_snippet": "if (Status == EFI_BUFFER_TOO_SMALL) {"
+    },
+    {
+      "if_line": 2133,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2143,
+      "next_statement": "} else {",
+      "condition_snippet": "if (MergedBufSize == Variable->CurrPtr->DataSize) {"
+    },
+    {
+      "if_line": 2134,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2142,
+      "next_statement": "}",
+      "condition_snippet": "if ((TimeStamp == NULL) || CompareTimeStamp (TimeStamp, &Variable->CurrPtr->TimeStamp)) {"
+    },
+    {
+      "if_line": 2153,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2159,
+      "next_statement": "CopyMem ((UINT8*) ((UINTN) BufferForMerge + Variable->CurrPtr->DataSize), Data, DataSize);",
+      "condition_snippet": "if (Variable->CurrPtr->DataSize + DataSize > MaxDataSize) {"
+    },
+    {
+      "if_line": 2187,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2189,
+      "next_statement": "if (!Variable->Volatile) {",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2199,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2202,
+      "next_statement": "if (DataSize == 0 || (Attributes & (EFI_VARIABLE_RUNTIME_ACCESS | EFI_VARIABLE_BOOTSERVICE_ACCESS)) == 0) {",
+      "condition_snippet": "if ((DataSize == 0) && ((Attributes & EFI_VARIABLE_APPEND_WRITE) != 0)) {"
+    },
+    {
+      "if_line": 2208,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2211,
+      "next_statement": "if (AtRuntime () &&",
+      "condition_snippet": "if (DataSize == 0 || (Attributes & (EFI_VARIABLE_RUNTIME_ACCESS | EFI_VARIABLE_BOOTSERVICE_ACCESS)) "
+    },
+    {
+      "if_line": 2216,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2220,
+      "next_statement": "}",
+      "condition_snippet": "if (AtRuntime () &&         (((Attributes & EFI_VARIABLE_RUNTIME_ACCESS) == 0) || ((Attributes & EFI"
+    },
+    {
+      "if_line": 2295,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2421,
+      "next_statement": "Volatile = TRUE;",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_NON_VOLATILE) != 0) {"
+    },
+    {
+      "if_line": 2301,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2333,
+      "next_statement": "CacheOffset = mVariableModuleGlobal->NonVolatileLastVariableOffset;",
+      "condition_snippet": "if ((((Attributes & EFI_VARIABLE_HARDWARE_ERROR_RECORD) != 0)       && ((VarSize + mVariableModuleGl"
+    },
+    {
+      "if_line": 2305,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2308,
+      "next_statement": "Status = Reclaim (",
+      "condition_snippet": "if (AtRuntime ()) {"
+    },
+    {
+      "if_line": 2321,
+      "pattern": "success-path",
+      "insertion_after_line": 2321,
+      "next_statement": "if (Variable->CurrPtr != NULL) {",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2355,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2357,
+      "next_statement": "NextVariable->State = VAR_HEADER_VALID_ONLY;",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2373,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2375,
+      "next_statement": "Status = UpdateVariableStore (",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2389,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2391,
+      "next_statement": "NextVariable->State = VAR_ADDED;",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2406,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2408,
+      "next_statement": "mVariableModuleGlobal->NonVolatileLastVariableOffset += HEADER_ALIGN (VarSize);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2427,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2452,
+      "next_statement": "NextVariable->State = VAR_ADDED;",
+      "condition_snippet": "if ((UINT32) (VarSize + mVariableModuleGlobal->VolatileLastVariableOffset) >         ((VARIABLE_STOR"
+    },
+    {
+      "if_line": 2441,
+      "pattern": "success-path",
+      "insertion_after_line": 2441,
+      "next_statement": "if (Variable->CurrPtr != NULL) {",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2465,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2467,
+      "next_statement": "mVariableModuleGlobal->VolatileLastVariableOffset += HEADER_ALIGN (VarSize);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2475,
+      "pattern": "success-path",
+      "insertion_after_line": 2475,
+      "next_statement": "if (Variable->InDeletedTransitionPtr != NULL) {",
+      "condition_snippet": "if (!EFI_ERROR (Status) && Variable->CurrPtr != NULL) {"
+    },
+    {
+      "if_line": 2476,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2500,
+      "next_statement": "State = Variable->CurrPtr->State;",
+      "condition_snippet": "if (Variable->InDeletedTransitionPtr != NULL) {"
+    },
+    {
+      "if_line": 2492,
+      "pattern": "success-path",
+      "insertion_after_line": 2492,
+      "next_statement": "if (!Variable->Volatile) {",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2514,
+      "pattern": "success-path",
+      "insertion_after_line": 2514,
+      "next_statement": "CacheVariable->CurrPtr->State = State;",
+      "condition_snippet": "if (!EFI_ERROR (Status) && !Variable->Volatile) {"
+    },
+    {
+      "if_line": 2519,
+      "pattern": "success-path",
+      "insertion_after_line": 2519,
+      "next_statement": "UpdateVariableInfo (VariableName, VendorGuid, Volatile, FALSE, TRUE, FALSE, FALSE);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2574,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2582,
+      "next_statement": "return TRUE;",
+      "condition_snippet": "if (!CompareGuid (VendorGuid, &gEfiHardwareErrorVariableGuid) ||       (StrLen (VariableName) != Str"
+    },
+    {
+      "if_line": 2610,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2639,
+      "next_statement": "return EFI_SUCCESS;",
+      "condition_snippet": "if (CompareGuid (VendorGuid, &gEfiGlobalVariableGuid)){"
+    },
+    {
+      "if_line": 2615,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2618,
+      "next_statement": "}",
+      "condition_snippet": "if ((StrCmp (mGlobalVariableList[Index].Name, VariableName) == 0) &&           (Attributes == 0 || ("
+    },
+    {
+      "if_line": 2626,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2634,
+      "next_statement": "}",
+      "condition_snippet": "if ((StrLen (VariableName) == StrLen (mGlobalVariableList2[Index].Name)) &&           (StrnCmp (mGlo"
+    },
+    {
+      "if_line": 2669,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2671,
+      "next_statement": "if (mEndOfDxe) {",
+      "condition_snippet": "if (VariableName == NULL || VariableName[0] == 0 || VendorGuid == NULL) {"
+    },
+    {
+      "if_line": 2673,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2675,
+      "next_statement": "Entry = AllocateRuntimePool (sizeof (*Entry) + StrSize (VariableName));",
+      "condition_snippet": "if (mEndOfDxe) {"
+    },
+    {
+      "if_line": 2678,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2680,
+      "next_statement": "DEBUG ((EFI_D_INFO, \"[Variable] Lock: %g:%s\\n\", VendorGuid, VariableName));",
+      "condition_snippet": "if (Entry == NULL) {"
+    },
+    {
+      "if_line": 2712,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2724,
+      "next_statement": "return FALSE;",
+      "condition_snippet": "if (CompareGuid (VendorGuid, &gEfiGlobalVariableGuid)) {"
+    },
+    {
+      "if_line": 2713,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2723,
+      "next_statement": "}",
+      "condition_snippet": "if ((StrCmp (VariableName, EFI_SETUP_MODE_NAME) == 0) ||         (StrCmp (VariableName, EFI_SIGNATUR"
+    },
+    {
+      "if_line": 2764,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2766,
+      "next_statement": "AcquireLockOnlyAtBootTime(&mVariableModuleGlobal->VariableGlobal.VariableServicesLock);",
+      "condition_snippet": "if (VariableName == NULL || VendorGuid == NULL || DataSize == NULL) {"
+    },
+    {
+      "if_line": 2771,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2773,
+      "next_statement": "VarDataSize = DataSizeOfVariable (Variable.CurrPtr);",
+      "condition_snippet": "if (Variable.CurrPtr == NULL || EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2781,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2797,
+      "next_statement": "*DataSize = VarDataSize;",
+      "condition_snippet": "if (*DataSize >= VarDataSize) {"
+    },
+    {
+      "if_line": 2782,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2785,
+      "next_statement": "CopyMem (Data, GetVariableDataPtr (Variable.CurrPtr), VarDataSize);",
+      "condition_snippet": "if (Data == NULL) {"
+    },
+    {
+      "if_line": 2843,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2845,
+      "next_statement": "AcquireLockOnlyAtBootTime(&mVariableModuleGlobal->VariableGlobal.VariableServicesLock);",
+      "condition_snippet": "if (VariableNameSize == NULL || VariableName == NULL || VendorGuid == NULL) {"
+    },
+    {
+      "if_line": 2850,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2852,
+      "next_statement": "if (VariableName[0] != 0) {",
+      "condition_snippet": "if (Variable.CurrPtr == NULL || EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 2879,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2881,
+      "next_statement": "}",
+      "condition_snippet": "if ((VariableStoreHeader[Type] != NULL) && (Variable.StartPtr == GetStartPointer (VariableStoreHeade"
+    },
+    {
+      "if_line": 2888,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2890,
+      "next_statement": "}",
+      "condition_snippet": "if (VariableStoreHeader[Type] != NULL) {"
+    },
+    {
+      "if_line": 2897,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2900,
+      "next_statement": "Variable.StartPtr = GetStartPointer (VariableStoreHeader[Type]);",
+      "condition_snippet": "if (Type == VariableStoreTypeMax) {"
+    },
+    {
+      "if_line": 2909,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2965,
+      "next_statement": "Variable.CurrPtr = GetNextVariablePtr (Variable.CurrPtr);",
+      "condition_snippet": "if (Variable.CurrPtr->State == VAR_ADDED || Variable.CurrPtr->State == (VAR_IN_DELETED_TRANSITION & "
+    },
+    {
+      "if_line": 2910,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2964,
+      "next_statement": "}",
+      "condition_snippet": "if (!AtRuntime () || ((Variable.CurrPtr->Attributes & EFI_VARIABLE_RUNTIME_ACCESS) != 0)) {"
+    },
+    {
+      "if_line": 2911,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2929,
+      "next_statement": "if ((VariableStoreHeader[VariableStoreTypeHob] != NULL) && (VariableStoreHeader[VariableStoreTypeNv] != NULL) &&",
+      "condition_snippet": "if (Variable.CurrPtr->State == (VAR_IN_DELETED_TRANSITION & VAR_ADDED)) {"
+    },
+    {
+      "if_line": 2925,
+      "pattern": "success-path",
+      "insertion_after_line": 2925,
+      "next_statement": "Variable.CurrPtr = GetNextVariablePtr (Variable.CurrPtr);",
+      "condition_snippet": "if (!EFI_ERROR (Status) && VariablePtrTrack.CurrPtr->State == VAR_ADDED) {"
+    },
+    {
+      "if_line": 2934,
+      "pattern": "naive-guard",
+      "insertion_after_line": 2949,
+      "next_statement": "VarNameSize = NameSizeOfVariable (Variable.CurrPtr);",
+      "condition_snippet": "if ((VariableStoreHeader[VariableStoreTypeHob] != NULL) && (VariableStoreHeader[VariableStoreTypeNv]"
+    },
+    {
+      "if_line": 2945,
+      "pattern": "success-path",
+      "insertion_after_line": 2945,
+      "next_statement": "Variable.CurrPtr = GetNextVariablePtr (Variable.CurrPtr);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3021,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3023,
+      "next_statement": "if (IsReadOnlyVariable (VariableName, VendorGuid)) {",
+      "condition_snippet": "if (VariableName == NULL || VariableName[0] == 0 || VendorGuid == NULL) {"
+    },
+    {
+      "if_line": 3025,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3027,
+      "next_statement": "if (DataSize != 0 && Data == NULL) {",
+      "condition_snippet": "if (IsReadOnlyVariable (VariableName, VendorGuid)) {"
+    },
+    {
+      "if_line": 3029,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3031,
+      "next_statement": "if ((Attributes & (~EFI_VARIABLE_ATTRIBUTES_MASK)) != 0) {",
+      "condition_snippet": "if (DataSize != 0 && Data == NULL) {"
+    },
+    {
+      "if_line": 3036,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3038,
+      "next_statement": "if ((Attributes & (EFI_VARIABLE_RUNTIME_ACCESS | EFI_VARIABLE_BOOTSERVICE_ACCESS)) == EFI_VARIABLE_RUNTIME_ACCESS) {",
+      "condition_snippet": "if ((Attributes & (~EFI_VARIABLE_ATTRIBUTES_MASK)) != 0) {"
+    },
+    {
+      "if_line": 3043,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3045,
+      "next_statement": "if (((Attributes & EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS) == EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS)",
+      "condition_snippet": "if ((Attributes & (EFI_VARIABLE_RUNTIME_ACCESS | EFI_VARIABLE_BOOTSERVICE_ACCESS)) == EFI_VARIABLE_R"
+    },
+    {
+      "if_line": 3051,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3054,
+      "next_statement": "if ((Attributes & EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS) == EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS) {",
+      "condition_snippet": "if (((Attributes & EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS) == EFI_VARIABLE_AUTHENTICATED_WRITE_ACCE"
+    },
+    {
+      "if_line": 3056,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3064,
+      "next_statement": "if (DataSize < OFFSET_OF_AUTHINFO2_CERT_DATA ||",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_AUTHENTICATED_WRITE_ACCESS) == EFI_VARIABLE_AUTHENTICATED_WRITE_ACCES"
+    },
+    {
+      "if_line": 3057,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3062,
+      "next_statement": "PayloadSize = DataSize - AUTHINFO_SIZE;",
+      "condition_snippet": "if (DataSize < AUTHINFO_SIZE) {"
+    },
+    {
+      "if_line": 3068,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3072,
+      "next_statement": "PayloadSize = DataSize - AUTHINFO2_SIZE (Data);",
+      "condition_snippet": "if (DataSize < OFFSET_OF_AUTHINFO2_CERT_DATA ||       ((EFI_VARIABLE_AUTHENTICATION_2 *) Data)->Auth"
+    },
+    {
+      "if_line": 3078,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3083,
+      "next_statement": "if ((Attributes & EFI_VARIABLE_HARDWARE_ERROR_RECORD) == EFI_VARIABLE_HARDWARE_ERROR_RECORD) {",
+      "condition_snippet": "if ((UINTN)(~0) - PayloadSize < StrSize(VariableName)){"
+    },
+    {
+      "if_line": 3090,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3097,
+      "next_statement": "if (StrSize (VariableName) + PayloadSize > PcdGet32 (PcdMaxVariableSize) - sizeof (VARIABLE_HEADER)) {",
+      "condition_snippet": "if ((Attributes & EFI_VARIABLE_HARDWARE_ERROR_RECORD) == EFI_VARIABLE_HARDWARE_ERROR_RECORD) {"
+    },
+    {
+      "if_line": 3091,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3093,
+      "next_statement": "if (!IsHwErrRecVariable(VariableName, VendorGuid)) {",
+      "condition_snippet": "if (StrSize (VariableName) + PayloadSize > PcdGet32 (PcdMaxHardwareErrorVariableSize) - sizeof (VARI"
+    },
+    {
+      "if_line": 3094,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3096,
+      "next_statement": "} else {",
+      "condition_snippet": "if (!IsHwErrRecVariable(VariableName, VendorGuid)) {"
+    },
+    {
+      "if_line": 3102,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3104,
+      "next_statement": "}",
+      "condition_snippet": "if (StrSize (VariableName) + PayloadSize > PcdGet32 (PcdMaxVariableSize) - sizeof (VARIABLE_HEADER))"
+    },
+    {
+      "if_line": 3108,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3110,
+      "next_statement": "AcquireLockOnlyAtBootTime(&mVariableModuleGlobal->VariableGlobal.VariableServicesLock);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3129,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3144,
+      "next_statement": "Status = FindVariable (VariableName, VendorGuid, &Variable, &mVariableModuleGlobal->VariableGlobal, TRUE);",
+      "condition_snippet": "if (mEndOfDxe && mEnableLocking) {"
+    },
+    {
+      "if_line": 3138,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3142,
+      "next_statement": "}",
+      "condition_snippet": "if (CompareGuid (&Entry->Guid, VendorGuid) && (StrCmp (Entry->Name, VariableName) == 0)) {"
+    },
+    {
+      "if_line": 3150,
+      "pattern": "success-path",
+      "insertion_after_line": 3150,
+      "next_statement": "if (((Variable.CurrPtr->Attributes & EFI_VARIABLE_RUNTIME_ACCESS) == 0) && AtRuntime ()) {",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3151,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3154,
+      "next_statement": "if (Attributes != 0 && (Attributes & (~EFI_VARIABLE_APPEND_WRITE)) != Variable.CurrPtr->Attributes) {",
+      "condition_snippet": "if (((Variable.CurrPtr->Attributes & EFI_VARIABLE_RUNTIME_ACCESS) == 0) && AtRuntime ()) {"
+    },
+    {
+      "if_line": 3155,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3164,
+      "next_statement": "}",
+      "condition_snippet": "if (Attributes != 0 && (Attributes & (~EFI_VARIABLE_APPEND_WRITE)) != Variable.CurrPtr->Attributes) "
+    },
+    {
+      "if_line": 3167,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3178,
+      "next_statement": "if (CompareGuid (VendorGuid, &gEfiGlobalVariableGuid) && (StrCmp (VariableName, EFI_PLATFORM_KEY_NAME) == 0)){",
+      "condition_snippet": "if (!FeaturePcdGet (PcdUefiVariableDefaultLangDeprecate)) {"
+    },
+    {
+      "if_line": 3172,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3177,
+      "next_statement": "}",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3202,
+      "pattern": "success-path",
+      "insertion_after_line": 3202,
+      "next_statement": "SecureBootHook (",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3338,
+      "pattern": "success-path",
+      "insertion_after_line": 3338,
+      "next_statement": "if ((Variable->Attributes & EFI_VARIABLE_HARDWARE_ERROR_RECORD) == EFI_VARIABLE_HARDWARE_ERROR_RECORD) {",
+      "condition_snippet": "if (!EFI_ERROR (Status) && VariablePtrTrack.CurrPtr->State != VAR_ADDED) {"
+    },
+    {
+      "if_line": 3401,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3403,
+      "next_statement": "if((Attributes & (EFI_VARIABLE_NON_VOLATILE | EFI_VARIABLE_BOOTSERVICE_ACCESS | EFI_VARIABLE_RUNTIME_ACCESS | EFI_VARIABLE_HARDWARE_ERROR_RECORD)) == 0) {",
+      "condition_snippet": "if(MaximumVariableStorageSize == NULL || RemainingVariableStorageSize == NULL || MaximumVariableSize"
+    },
+    {
+      "if_line": 3405,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3410,
+      "next_statement": "return EFI_INVALID_PARAMETER;",
+      "condition_snippet": "if((Attributes & (EFI_VARIABLE_NON_VOLATILE | EFI_VARIABLE_BOOTSERVICE_ACCESS | EFI_VARIABLE_RUNTIME"
+    },
+    {
+      "if_line": 3461,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3463,
+      "next_statement": "Reclaimed = TRUE;",
+      "condition_snippet": "if (Reclaimed) {"
+    },
+    {
+      "if_line": 3534,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3536,
+      "next_statement": "NvStorageBase = (EFI_PHYSICAL_ADDRESS) PcdGet64 (PcdFlashNvStorageVariableBase64);",
+      "condition_snippet": "if (NvStorageData == NULL) {"
+    },
+    {
+      "if_line": 3579,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3583,
+      "next_statement": "VariableStoreBase = (EFI_PHYSICAL_ADDRESS) ((UINTN) FvHeader + FvHeader->HeaderLength);",
+      "condition_snippet": "if ((FvHeader->Signature != EFI_FVH_SIGNATURE) || (!CompareGuid (&gEfiSystemNvDataFvGuid, &FvHeader-"
+    },
+    {
+      "if_line": 3590,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3594,
+      "next_statement": "ASSERT(mNvVariableCache->Size == VariableStoreLength);",
+      "condition_snippet": "if (GetVariableStoreStatus (mNvVariableCache) != EfiValid) {"
+    },
+    {
+      "if_line": 3645,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3707,
+      "next_statement": "}",
+      "condition_snippet": "if (mVariableModuleGlobal->VariableGlobal.HobVariableBase != 0) {"
+    },
+    {
+      "if_line": 3655,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3660,
+      "next_statement": "ASSERT ((Variable->Attributes & EFI_VARIABLE_NON_VOLATILE) != 0);",
+      "condition_snippet": "if (Variable->State != VAR_ADDED) {"
+    },
+    {
+      "if_line": 3682,
+      "pattern": "success-path",
+      "insertion_after_line": 3682,
+      "next_statement": "DEBUG ((EFI_D_INFO, \"Variable driver set the HOB variable to DELETED state in local: %g %s\\n\", &Variable->VendorGuid, GetVariableNamePtr (Variable)));",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3747,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3764,
+      "next_statement": "}",
+      "condition_snippet": "if (Data != 0xff) {"
+    },
+    {
+      "if_line": 3760,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3762,
+      "next_statement": "break;",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3801,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3803,
+      "next_statement": "InitializeLock (&mVariableModuleGlobal->VariableGlobal.VariableServicesLock, TPL_NOTIFY);",
+      "condition_snippet": "if (mVariableModuleGlobal == NULL) {"
+    },
+    {
+      "if_line": 3811,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3823,
+      "next_statement": "ScratchSize = MAX (PcdGet32 (PcdMaxVariableSize), PcdGet32 (PcdMaxHardwareErrorVariableSize));",
+      "condition_snippet": "if (GuidHob != NULL) {"
+    },
+    {
+      "if_line": 3814,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3820,
+      "next_statement": "DEBUG ((EFI_D_ERROR, \"HOB Variable Store header is corrupted!\\n\"));",
+      "condition_snippet": "if (GetVariableStoreStatus (VariableStoreHeader) == EfiValid) {"
+    },
+    {
+      "if_line": 3816,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3819,
+      "next_statement": "} else {",
+      "condition_snippet": "if (mVariableModuleGlobal->VariableGlobal.HobVariableBase == 0) {"
+    },
+    {
+      "if_line": 3830,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3836,
+      "next_statement": "SetMem (VolatileVariableStore, PcdGet32 (PcdVariableStoreSize) + ScratchSize, 0xff);",
+      "condition_snippet": "if (VolatileVariableStore == NULL) {"
+    },
+    {
+      "if_line": 3898,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3900,
+      "next_statement": "Fvb = NULL;",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3908,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3911,
+      "next_statement": "Status = Fvb->GetAttributes (Fvb, &Attributes);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3917,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3919,
+      "next_statement": "Status = Fvb->GetPhysicalAddress (Fvb, &FvbBaseAddress);",
+      "condition_snippet": "if (EFI_ERROR (Status) || ((Attributes & EFI_FVB2_WRITE_STATUS) == 0)) {"
+    },
+    {
+      "if_line": 3925,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3927,
+      "next_statement": "FwVolHeader = (EFI_FIRMWARE_VOLUME_HEADER *) ((UINTN) FvbBaseAddress);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 3930,
+      "pattern": "naive-guard",
+      "insertion_after_line": 3939,
+      "next_statement": "}",
+      "condition_snippet": "if ((Address >= FvbBaseAddress) && (Address < (FvbBaseAddress + FwVolHeader->FvLength))) {"
+    }
+  ],
+  "SecurityPkg_VariableSmm.c": [
+    {
+      "if_line": 280,
+      "pattern": "naive-guard",
+      "insertion_after_line": 282,
+      "next_statement": "BufferSize     = 0;",
+      "condition_snippet": "if ((NumberHandles == NULL) || (Buffer == NULL)) {"
+    },
+    {
+      "if_line": 294,
+      "pattern": "naive-guard",
+      "insertion_after_line": 296,
+      "next_statement": "*Buffer = AllocatePool (BufferSize);",
+      "condition_snippet": "if (EFI_ERROR(Status) && Status != EFI_BUFFER_TOO_SMALL) {"
+    },
+    {
+      "if_line": 299,
+      "pattern": "naive-guard",
+      "insertion_after_line": 301,
+      "next_statement": "Status = gSmst->SmmLocateHandle (",
+      "condition_snippet": "if (*Buffer == NULL) {"
+    },
+    {
+      "if_line": 354,
+      "pattern": "naive-guard",
+      "insertion_after_line": 356,
+      "next_statement": "VariableInfo = gVariableInfo;",
+      "condition_snippet": "if (InfoEntry == NULL) {"
+    },
+    {
+      "if_line": 359,
+      "pattern": "naive-guard",
+      "insertion_after_line": 361,
+      "next_statement": "StatisticsInfoSize = sizeof (VARIABLE_INFO_ENTRY) + StrSize (VariableInfo->Name);",
+      "condition_snippet": "if (VariableInfo == NULL) {"
+    },
+    {
+      "if_line": 364,
+      "pattern": "naive-guard",
+      "insertion_after_line": 367,
+      "next_statement": "InfoName = (CHAR16 *)(InfoEntry + 1);",
+      "condition_snippet": "if (*InfoSize < StatisticsInfoSize) {"
+    },
+    {
+      "if_line": 372,
+      "pattern": "naive-guard",
+      "insertion_after_line": 380,
+      "next_statement": "while (VariableInfo != NULL) {",
+      "condition_snippet": "if (CompareGuid (&VendorGuid, &mZeroGuid)) {"
+    },
+    {
+      "if_line": 386,
+      "pattern": "naive-guard",
+      "insertion_after_line": 397,
+      "next_statement": "VariableInfo = VariableInfo->Next;",
+      "condition_snippet": "if (CompareGuid (&VariableInfo->VendorGuid, &VendorGuid)) {"
+    },
+    {
+      "if_line": 388,
+      "pattern": "naive-guard",
+      "insertion_after_line": 396,
+      "next_statement": "}",
+      "condition_snippet": "if (NameLength == StrSize (InfoName)) {"
+    },
+    {
+      "if_line": 389,
+      "pattern": "naive-guard",
+      "insertion_after_line": 395,
+      "next_statement": "}",
+      "condition_snippet": "if (CompareMem (VariableInfo->Name, InfoName, NameLength) == 0) {"
+    },
+    {
+      "if_line": 401,
+      "pattern": "naive-guard",
+      "insertion_after_line": 404,
+      "next_statement": "StatisticsInfoSize = sizeof (VARIABLE_INFO_ENTRY) + StrSize (VariableInfo->Name);",
+      "condition_snippet": "if (VariableInfo == NULL) {"
+    },
+    {
+      "if_line": 410,
+      "pattern": "naive-guard",
+      "insertion_after_line": 413,
+      "next_statement": "CopyMem (InfoEntry, VariableInfo, sizeof (VARIABLE_INFO_ENTRY));",
+      "condition_snippet": "if (*InfoSize < StatisticsInfoSize) {"
+    },
+    {
+      "if_line": 474,
+      "pattern": "naive-guard",
+      "insertion_after_line": 476,
+      "next_statement": "TempCommBufferSize = *CommBufferSize;",
+      "condition_snippet": "if (CommBuffer == NULL || CommBufferSize == NULL) {"
+    },
+    {
+      "if_line": 480,
+      "pattern": "naive-guard",
+      "insertion_after_line": 483,
+      "next_statement": "CommBufferPayloadSize = TempCommBufferSize - SMM_VARIABLE_COMMUNICATE_HEADER_SIZE;",
+      "condition_snippet": "if (TempCommBufferSize < SMM_VARIABLE_COMMUNICATE_HEADER_SIZE) {"
+    },
+    {
+      "if_line": 485,
+      "pattern": "naive-guard",
+      "insertion_after_line": 488,
+      "next_statement": "if (!SmmIsBufferOutsideSmmValid ((UINTN)CommBuffer, TempCommBufferSize)) {",
+      "condition_snippet": "if (CommBufferPayloadSize > mVariableBufferPayloadSize) {"
+    },
+    {
+      "if_line": 490,
+      "pattern": "naive-guard",
+      "insertion_after_line": 493,
+      "next_statement": "SmmVariableFunctionHeader = (SMM_VARIABLE_COMMUNICATE_HEADER *)CommBuffer;",
+      "condition_snippet": "if (!SmmIsBufferOutsideSmmValid ((UINTN)CommBuffer, TempCommBufferSize)) {"
+    },
+    {
+      "if_line": 499,
+      "pattern": "naive-guard",
+      "insertion_after_line": 502,
+      "next_statement": "CopyMem (mVariableBufferPayload, SmmVariableFunctionHeader->Data, CommBufferPayloadSize);",
+      "condition_snippet": "if (CommBufferPayloadSize < OFFSET_OF(SMM_VARIABLE_COMMUNICATE_ACCESS_VARIABLE, Name)) {"
+    },
+    {
+      "if_line": 508,
+      "pattern": "naive-guard",
+      "insertion_after_line": 515,
+      "next_statement": "InfoSize = OFFSET_OF(SMM_VARIABLE_COMMUNICATE_ACCESS_VARIABLE, Name)",
+      "condition_snippet": "if (((UINTN)(~0) - SmmVariableHeader->DataSize < OFFSET_OF(SMM_VARIABLE_COMMUNICATE_ACCESS_VARIABLE,"
+    },
+    {
+      "if_line": 522,
+      "pattern": "naive-guard",
+      "insertion_after_line": 526,
+      "next_statement": "if (SmmVariableHeader->NameSize < sizeof (CHAR16) || SmmVariableHeader->Name[SmmVariableHeader->NameSize/sizeof (CHAR16) - 1] != L'\\0') {",
+      "condition_snippet": "if (InfoSize > CommBufferPayloadSize) {"
+    },
+    {
+      "if_line": 528,
+      "pattern": "naive-guard",
+      "insertion_after_line": 534,
+      "next_statement": "Status = VariableServiceGetVariable (",
+      "condition_snippet": "if (SmmVariableHeader->NameSize < sizeof (CHAR16) || SmmVariableHeader->Name[SmmVariableHeader->Name"
+    },
+    {
+      "if_line": 547,
+      "pattern": "naive-guard",
+      "insertion_after_line": 550,
+      "next_statement": "CopyMem (mVariableBufferPayload, SmmVariableFunctionHeader->Data, CommBufferPayloadSize);",
+      "condition_snippet": "if (CommBufferPayloadSize < OFFSET_OF(SMM_VARIABLE_COMMUNICATE_GET_NEXT_VARIABLE_NAME, Name)) {"
+    },
+    {
+      "if_line": 556,
+      "pattern": "naive-guard",
+      "insertion_after_line": 562,
+      "next_statement": "InfoSize = OFFSET_OF(SMM_VARIABLE_COMMUNICATE_GET_NEXT_VARIABLE_NAME, Name) + GetNextVariableName->NameSize;",
+      "condition_snippet": "if ((UINTN)(~0) - GetNextVariableName->NameSize < OFFSET_OF(SMM_VARIABLE_COMMUNICATE_GET_NEXT_VARIAB"
+    },
+    {
+      "if_line": 568,
+      "pattern": "naive-guard",
+      "insertion_after_line": 572,
+      "next_statement": "NameBufferSize = CommBufferPayloadSize - OFFSET_OF(SMM_VARIABLE_COMMUNICATE_GET_NEXT_VARIABLE_NAME, Name);",
+      "condition_snippet": "if (InfoSize > CommBufferPayloadSize) {"
+    },
+    {
+      "if_line": 575,
+      "pattern": "naive-guard",
+      "insertion_after_line": 581,
+      "next_statement": "Status = VariableServiceGetNextVariableName (",
+      "condition_snippet": "if (NameBufferSize < sizeof (CHAR16) || GetNextVariableName->Name[NameBufferSize/sizeof (CHAR16) - 1"
+    },
+    {
+      "if_line": 592,
+      "pattern": "naive-guard",
+      "insertion_after_line": 595,
+      "next_statement": "CopyMem (mVariableBufferPayload, SmmVariableFunctionHeader->Data, CommBufferPayloadSize);",
+      "condition_snippet": "if (CommBufferPayloadSize < OFFSET_OF(SMM_VARIABLE_COMMUNICATE_ACCESS_VARIABLE, Name)) {"
+    },
+    {
+      "if_line": 601,
+      "pattern": "naive-guard",
+      "insertion_after_line": 608,
+      "next_statement": "InfoSize = OFFSET_OF(SMM_VARIABLE_COMMUNICATE_ACCESS_VARIABLE, Name)",
+      "condition_snippet": "if (((UINTN)(~0) - SmmVariableHeader->DataSize < OFFSET_OF(SMM_VARIABLE_COMMUNICATE_ACCESS_VARIABLE,"
+    },
+    {
+      "if_line": 616,
+      "pattern": "naive-guard",
+      "insertion_after_line": 620,
+      "next_statement": "if (SmmVariableHeader->NameSize < sizeof (CHAR16) || SmmVariableHeader->Name[SmmVariableHeader->NameSize/sizeof (CHAR16) - 1] != L'\\0') {",
+      "condition_snippet": "if (InfoSize > CommBufferPayloadSize) {"
+    },
+    {
+      "if_line": 622,
+      "pattern": "naive-guard",
+      "insertion_after_line": 628,
+      "next_statement": "Status = VariableServiceSetVariable (",
+      "condition_snippet": "if (SmmVariableHeader->NameSize < sizeof (CHAR16) || SmmVariableHeader->Name[SmmVariableHeader->Name"
+    },
+    {
+      "if_line": 640,
+      "pattern": "naive-guard",
+      "insertion_after_line": 643,
+      "next_statement": "QueryVariableInfo = (SMM_VARIABLE_COMMUNICATE_QUERY_VARIABLE_INFO *) SmmVariableFunctionHeader->Data;",
+      "condition_snippet": "if (CommBufferPayloadSize < sizeof (SMM_VARIABLE_COMMUNICATE_QUERY_VARIABLE_INFO)) {"
+    },
+    {
+      "if_line": 656,
+      "pattern": "naive-guard",
+      "insertion_after_line": 659,
+      "next_statement": "ReclaimForOS ();",
+      "condition_snippet": "if (AtRuntime()) {"
+    },
+    {
+      "if_line": 764,
+      "pattern": "naive-guard",
+      "insertion_after_line": 766,
+      "next_statement": "Status = GetFtwProtocol ((VOID **)&FtwProtocol);",
+      "condition_snippet": "if (mVariableModuleGlobal->FvbInstance != NULL) {"
+    },
+    {
+      "if_line": 772,
+      "pattern": "naive-guard",
+      "insertion_after_line": 774,
+      "next_statement": "Status = FtwProtocol->GetMaxBlockSize (FtwProtocol, &FtwMaxBlockSize);",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 777,
+      "pattern": "success-path",
+      "insertion_after_line": 777,
+      "next_statement": "ASSERT (PcdGet32 (PcdFlashNvStorageVariableSize) <= FtwMaxBlockSize);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 789,
+      "pattern": "naive-guard",
+      "insertion_after_line": 791,
+      "next_statement": "mVariableModuleGlobal->FvbInstance = FvbProtocol;",
+      "condition_snippet": "if (EFI_ERROR (Status)) {"
+    }
+  ]
+}

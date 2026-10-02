@@ -1,0 +1,29 @@
+{
+  "Hob.c": [
+    {
+      "line": 113,
+      "variable": "HobLength",
+      "alignment_expr": "HobLength = (UINT16)((HobLength + 0x7) & (~0x7));",
+      "preceding_line": "HandOffHob = GetHobList ();",
+      "insertion_before_line": 112
+    }
+  ],
+  "StandaloneMmCoreHobLib.c": [
+    {
+      "line": 37,
+      "variable": "HobLength",
+      "alignment_expr": "HobLength = (UINT16)((HobLength + 0x7) & (~0x7));",
+      "preceding_line": "HandOffHob = GetHobList ();",
+      "insertion_before_line": 36
+    }
+  ],
+  "UefiPayloadPkg_Hob.c": [
+    {
+      "line": 113,
+      "variable": "HobLength",
+      "alignment_expr": "HobLength = (UINT16)((HobLength + 0x7) & (~0x7));",
+      "preceding_line": "HandOffHob = GetHobList ();",
+      "insertion_before_line": 112
+    }
+  ]
+}

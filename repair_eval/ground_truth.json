@@ -1,0 +1,44 @@
+{
+  "FaultTolerantWriteSmm.c": {
+    "original_hash": "cb54cd24634cfeccadb661f7f65aab3adee05e1c",
+    "parent_hash": "2ecd829972f8553de83fbf943c5b89863999d7c8",
+    "filepath": "MdeModulePkg/Universal/FaultTolerantWriteDxe/FaultTolerantWriteSmm.c",
+    "anchors": [
+      "Status = FtwWrite("
+    ]
+  },
+  "SmmLockBox.c": {
+    "original_hash": "ee65b84e7663d12c1f950a418a0ed63776a80e4f",
+    "parent_hash": "cb54cd24634cfeccadb661f7f65aab3adee05e1c",
+    "filepath": "MdeModulePkg/Universal/LockBox/SmmLockBox/SmmLockBox.c",
+    "anchors": [
+      "Status = SaveLockBox (",
+      "Status = UpdateLockBox ("
+    ]
+  },
+  "SmmCorePerformanceLib.c": {
+    "original_hash": "9077599e73fd091aeedced512daf2e64520348cb",
+    "parent_hash": "622326deb8252b6b4f69064620bf07988d4886e0",
+    "filepath": "MdeModulePkg/Library/SmmCorePerformanceLib/SmmCorePerformanceLib.c",
+    "anchors": [
+      "GaugeEntryExArray = (GAUGE_DATA_ENTRY_EX *) (mGaugeData + 1);",
+      "GaugeEntryExArray = (GAUGE_DATA_ENTRY_EX *) (mGaugeData + 1);"
+    ]
+  },
+  "OpalPasswordSupportLib.c": {
+    "original_hash": "f7defccaecd625f77225abbbce7658ed02af21c4",
+    "parent_hash": "72d299c376f7f9df2e65c9015020218614ba145b",
+    "filepath": "SecurityPkg/Library/OpalPasswordSupportLib/OpalPasswordSupportLib.c",
+    "anchors": [
+      "Status = OpalSavePasswordToSmm (&DeviceBuffer->OpalDevicePath, DeviceBuffer->Password, DeviceBuffer->PasswordLength);"
+    ]
+  },
+  "PiSmmCpuDxeSmm.c": {
+    "original_hash": "5b02be4d9a234d80c7578fc3a0c789d22ce83f38",
+    "parent_hash": "e83d841fdc2878959185c4c6cc38a7a1e88377a4",
+    "filepath": "UefiCpuPkg/PiSmmCpuDxeSmm/PiSmmCpuDxeSmm.c",
+    "anchors": [
+      "if (Register == EFI_SMM_SAVE_STATE_REGISTER_PROCESSOR_ID) {"
+    ]
+  }
+}

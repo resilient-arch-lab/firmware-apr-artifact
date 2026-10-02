@@ -1,0 +1,516 @@
+{
+  "FaultTolerantWriteSmm.c": [
+    {
+      "if_line": 153,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 155,
+      "next_statement": "BufferSize     = 0;",
+      "condition_snippet": "if ((NumberHandles == NULL) || (Buffer == NULL)) {"
+    },
+    {
+      "if_line": 167,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 169,
+      "next_statement": "*Buffer = AllocatePool (BufferSize);",
+      "condition_snippet": "if (EFI_ERROR(Status) && Status != EFI_BUFFER_TOO_SMALL) {"
+    },
+    {
+      "if_line": 172,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 174,
+      "next_statement": "Status = gSmst->SmmLocateHandle (",
+      "condition_snippet": "if (*Buffer == NULL) {"
+    },
+    {
+      "if_line": 326,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 328,
+      "next_statement": "TempCommBufferSize = *CommBufferSize;",
+      "condition_snippet": "if (CommBuffer == NULL || CommBufferSize == NULL) {"
+    },
+    {
+      "if_line": 332,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 335,
+      "next_statement": "CommBufferPayloadSize = TempCommBufferSize - SMM_FTW_COMMUNICATE_HEADER_SIZE;",
+      "condition_snippet": "if (TempCommBufferSize < SMM_FTW_COMMUNICATE_HEADER_SIZE) {"
+    },
+    {
+      "if_line": 338,
+      "pattern": "dict-guard",
+      "insertion_after_line": 341,
+      "next_statement": "SmmFtwFunctionHeader = (SMM_FTW_COMMUNICATE_FUNCTION_HEADER *)CommBuffer;",
+      "condition_snippet": "if (!SmmIsBufferOutsideSmmValid ((UINTN)CommBuffer, TempCommBufferSize)) {"
+    },
+    {
+      "if_line": 356,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 359,
+      "next_statement": "SmmGetMaxBlockSizeHeader = (SMM_FTW_GET_MAX_BLOCK_SIZE_HEADER *) SmmFtwFunctionHeader->Data;",
+      "condition_snippet": "if (CommBufferPayloadSize < sizeof (SMM_FTW_GET_MAX_BLOCK_SIZE_HEADER)) {"
+    },
+    {
+      "if_line": 369,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 372,
+      "next_statement": "SmmFtwAllocateHeader = (SMM_FTW_ALLOCATE_HEADER *) SmmFtwFunctionHeader->Data;",
+      "condition_snippet": "if (CommBufferPayloadSize < sizeof (SMM_FTW_ALLOCATE_HEADER)) {"
+    },
+    {
+      "if_line": 383,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 386,
+      "next_statement": "SmmFtwWriteHeader = (SMM_FTW_WRITE_HEADER *) SmmFtwFunctionHeader->Data;",
+      "condition_snippet": "if (CommBufferPayloadSize < OFFSET_OF (SMM_FTW_WRITE_HEADER, Data)) {"
+    },
+    {
+      "if_line": 390,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 397,
+      "next_statement": "InfoSize = OFFSET_OF (SMM_FTW_WRITE_HEADER, Data) + Length + PrivateDataSize;",
+      "condition_snippet": "if (((UINTN)(~0) - Length < OFFSET_OF (SMM_FTW_WRITE_HEADER, Data)) ||         ((UINTN)(~0) - Privat"
+    },
+    {
+      "if_line": 403,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 407,
+      "next_statement": "if (PrivateDataSize == 0) {",
+      "condition_snippet": "if (InfoSize > CommBufferPayloadSize) {"
+    },
+    {
+      "if_line": 419,
+      "pattern": "success-path",
+      "insertion_after_line": 419,
+      "next_statement": "Status = FtwWrite(",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 433,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 436,
+      "next_statement": "SmmFtwRestartHeader = (SMM_FTW_RESTART_HEADER *) SmmFtwFunctionHeader->Data;",
+      "condition_snippet": "if (CommBufferPayloadSize < sizeof (SMM_FTW_RESTART_HEADER)) {"
+    },
+    {
+      "if_line": 443,
+      "pattern": "success-path",
+      "insertion_after_line": 443,
+      "next_statement": "Status = FtwRestart (&mFtwDevice->FtwInstance, SmmFvbHandle);",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    },
+    {
+      "if_line": 453,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 456,
+      "next_statement": "SmmFtwGetLastWriteHeader = (SMM_FTW_GET_LAST_WRITE_HEADER *) SmmFtwFunctionHeader->Data;",
+      "condition_snippet": "if (CommBufferPayloadSize < OFFSET_OF (SMM_FTW_GET_LAST_WRITE_HEADER, Data)) {"
+    },
+    {
+      "if_line": 459,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 465,
+      "next_statement": "InfoSize = OFFSET_OF (SMM_FTW_GET_LAST_WRITE_HEADER, Data) + PrivateDataSize;",
+      "condition_snippet": "if ((UINTN)(~0) - PrivateDataSize < OFFSET_OF (SMM_FTW_GET_LAST_WRITE_HEADER, Data)){"
+    },
+    {
+      "if_line": 532,
+      "pattern": "success-path",
+      "insertion_after_line": 532,
+      "next_statement": "return EFI_SUCCESS;",
+      "condition_snippet": "if (!EFI_ERROR (Status)) {"
+    }
+  ],
+  "OpalPasswordSupportLib.c": [
+    {
+      "if_line": 421,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 426,
+      "next_statement": "SmmCommMemRegion = (EFI_MEMORY_DESCRIPTOR *) ((UINT8 *) SmmCommMemRegion + SmmCommRegionTable->DescriptorSize);",
+      "condition_snippet": "if (SmmCommMemRegion->Type == EfiConventionalMemory) {"
+    },
+    {
+      "if_line": 423,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 425,
+      "next_statement": "}",
+      "condition_snippet": "if (Size >= (DataSize + OFFSET_OF (EFI_SMM_COMMUNICATE_HEADER, Data) + OFFSET_OF (OPAL_SMM_COMMUNICA"
+    },
+    {
+      "if_line": 514,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 520,
+      "next_statement": "DevicePathLen = GetDevicePathSize (DevicePath);",
+      "condition_snippet": "if (DevicePath == NULL) {"
+    },
+    {
+      "if_line": 525,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 527,
+      "next_statement": "if (Password != NULL) {",
+      "condition_snippet": "if (Buffer == NULL) {"
+    },
+    {
+      "if_line": 577,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 579,
+      "next_statement": "}",
+      "condition_snippet": "if (Password[Index] != 0) {"
+    },
+    {
+      "if_line": 612,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 615,
+      "next_statement": "}",
+      "condition_snippet": "if (CompareMem (&List->OpalDevicePath, DevicePath, DevicePathLen) == 0) {"
+    },
+    {
+      "if_line": 619,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 621,
+      "next_statement": "Dev->PasswordLength = PasswordLength;",
+      "condition_snippet": "if (Dev == NULL) {"
+    },
+    {
+      "if_line": 667,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 669,
+      "next_statement": "Status = EFI_SUCCESS;",
+      "condition_snippet": "if (CommBuffer == NULL || CommBufferSize == NULL) {"
+    },
+    {
+      "if_line": 675,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 677,
+      "next_statement": "SmmFunctionHeader = (OPAL_SMM_COMMUNICATE_HEADER *)CommBuffer;",
+      "condition_snippet": "if (TempCommBufferSize < OFFSET_OF (OPAL_SMM_COMMUNICATE_HEADER, Data)) {"
+    },
+    {
+      "if_line": 682,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 684,
+      "next_statement": "DeviceBuffer = AllocateCopyPool (TempCommBufferSize - OFFSET_OF (OPAL_SMM_COMMUNICATE_HEADER, Data), SmmFunctionHeader->Data);",
+      "condition_snippet": "if (TempCommBufferSize <= OFFSET_OF (OPAL_SMM_COMMUNICATE_HEADER, Data) + OFFSET_OF (OPAL_COMM_DEVIC"
+    },
+    {
+      "if_line": 687,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 690,
+      "next_statement": "RemainedDevicePathSize = TempCommBufferSize - OFFSET_OF (OPAL_SMM_COMMUNICATE_HEADER, Data)",
+      "condition_snippet": "if (DeviceBuffer == NULL) {"
+    },
+    {
+      "if_line": 697,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 701,
+      "next_statement": "if (OpalPasswordIsFullZero (DeviceBuffer->Password) ||",
+      "condition_snippet": "if (!IsDevicePathValid(&DeviceBuffer->OpalDevicePath, RemainedDevicePathSize) ||           (Remained"
+    },
+    {
+      "if_line": 703,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 708,
+      "next_statement": "Status = OpalSavePasswordToSmm (&DeviceBuffer->OpalDevicePath, DeviceBuffer->Password, DeviceBuffer->PasswordLength);",
+      "condition_snippet": "if (OpalPasswordIsFullZero (DeviceBuffer->Password) ||           DeviceBuffer->PasswordLength == 0 |"
+    }
+  ],
+  "PiSmmCpuDxeSmm.c": [
+    {
+      "if_line": 237,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 239,
+      "next_statement": "if (Register == EFI_SMM_SAVE_STATE_REGISTER_PROCESSOR_ID) {",
+      "condition_snippet": "if ((CpuIndex >= gSmst->NumberOfCpus) || (Buffer == NULL)) {"
+    },
+    {
+      "if_line": 244,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 262,
+      "next_statement": "if (!(*(mSmmMpSyncData->CpuData[CpuIndex].Present))) {",
+      "condition_snippet": "if (Register == EFI_SMM_SAVE_STATE_REGISTER_PROCESSOR_ID) {"
+    },
+    {
+      "if_line": 248,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 250,
+      "next_statement": "if (*(mSmmMpSyncData->CpuData[CpuIndex].Present)) {",
+      "condition_snippet": "if (Width != sizeof (UINT64)) {"
+    },
+    {
+      "if_line": 256,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 259,
+      "next_statement": "return EFI_NOT_FOUND;",
+      "condition_snippet": "if (*(mSmmMpSyncData->CpuData[CpuIndex].Present)) {"
+    },
+    {
+      "if_line": 264,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 266,
+      "next_statement": "Status = SmmCpuFeaturesReadSaveStateRegister (CpuIndex, Register, Width, Buffer);",
+      "condition_snippet": "if (!(*(mSmmMpSyncData->CpuData[CpuIndex].Present))) {"
+    },
+    {
+      "if_line": 304,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 306,
+      "next_statement": "if (Register == EFI_SMM_SAVE_STATE_REGISTER_PROCESSOR_ID) {",
+      "condition_snippet": "if ((CpuIndex >= gSmst->NumberOfCpus) || (Buffer == NULL)) {"
+    },
+    {
+      "if_line": 311,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 313,
+      "next_statement": "if (!mSmmMpSyncData->CpuData[CpuIndex].Present) {",
+      "condition_snippet": "if (Register == EFI_SMM_SAVE_STATE_REGISTER_PROCESSOR_ID) {"
+    },
+    {
+      "if_line": 315,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 317,
+      "next_statement": "Status = SmmCpuFeaturesWriteSaveStateRegister (CpuIndex, Register, Width, Buffer);",
+      "condition_snippet": "if (!mSmmMpSyncData->CpuData[CpuIndex].Present) {"
+    },
+    {
+      "if_line": 349,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 381,
+      "next_statement": "}",
+      "condition_snippet": "if (ApicId == (UINT32)gSmmCpuPrivate->ProcessorInfo[Index].ProcessorId) {"
+    },
+    {
+      "if_line": 1015,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 1017,
+      "next_statement": "if (mSmmCpuSmramRanges[Index].CpuStart >= BASE_1MB) {",
+      "condition_snippet": "if ((mSmmCpuSmramRanges[Index].RegionState & (EFI_ALLOCATED | EFI_NEEDS_TESTING | EFI_NEEDS_ECC_INIT"
+    },
+    {
+      "if_line": 1153,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 1158,
+      "next_statement": "AcquireSpinLock (mConfigSmmCodeAccessCheckLock);",
+      "condition_snippet": "if (gSmmCpuPrivate->ProcessorInfo[Index].ProcessorId == INVALID_APIC_ID) {"
+    },
+    {
+      "if_line": 1230,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 1232,
+      "next_statement": "Status = gSmst->SmmAllocatePages (AllocateAnyPages, EfiRuntimeServicesCode, Pages, &Memory);",
+      "condition_snippet": "if (Pages == 0) {"
+    },
+    {
+      "if_line": 1269,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 1271,
+      "next_statement": "if (Alignment > EFI_PAGE_SIZE) {",
+      "condition_snippet": "if (Pages == 0) {"
+    }
+  ],
+  "SmmCorePerformanceLib.c": [
+    {
+      "if_line": 118,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 125,
+      "next_statement": "}",
+      "condition_snippet": "if (GaugeEntryExArray[Index2].EndTimeStamp == 0 &&         (GaugeEntryExArray[Index2].Handle == (EFI"
+    },
+    {
+      "if_line": 176,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 200,
+      "next_statement": "GaugeEntryExArray               = (GAUGE_DATA_ENTRY_EX *) (mGaugeData + 1);",
+      "condition_snippet": "if (Index >= mMaxGaugeRecords) {"
+    },
+    {
+      "if_line": 186,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 189,
+      "next_statement": "mGaugeData = NewGaugeData;",
+      "condition_snippet": "if (NewGaugeData == NULL) {"
+    },
+    {
+      "if_line": 273,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 276,
+      "next_statement": "GaugeEntryExArray = (GAUGE_DATA_ENTRY_EX *) (mGaugeData + 1);",
+      "condition_snippet": "if (Index >= mGaugeData->NumberOfEntries) {"
+    },
+    {
+      "if_line": 316,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 318,
+      "next_statement": "if (LogEntryKey == NumberOfEntries) {",
+      "condition_snippet": "if (LogEntryKey > NumberOfEntries) {"
+    },
+    {
+      "if_line": 319,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 321,
+      "next_statement": "GaugeEntryExArray = (GAUGE_DATA_ENTRY_EX *) (mGaugeData + 1);",
+      "condition_snippet": "if (LogEntryKey == NumberOfEntries) {"
+    },
+    {
+      "if_line": 325,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 327,
+      "next_statement": "*GaugeDataEntryEx = &GaugeEntryExArray[LogEntryKey];",
+      "condition_snippet": "if (GaugeDataEntryEx == NULL) {"
+    },
+    {
+      "if_line": 441,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 443,
+      "next_statement": "*GaugeDataEntry = (GAUGE_DATA_ENTRY *) GaugeEntryEx;",
+      "condition_snippet": "if (GaugeDataEntry == NULL) {"
+    },
+    {
+      "if_line": 497,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 499,
+      "next_statement": "TempCommBufferSize = *CommBufferSize;",
+      "condition_snippet": "if (CommBuffer == NULL || CommBufferSize == NULL) {"
+    },
+    {
+      "if_line": 503,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 505,
+      "next_statement": "if (!SmmIsBufferOutsideSmmValid ((UINTN)CommBuffer, TempCommBufferSize)) {",
+      "condition_snippet": "if(TempCommBufferSize < sizeof (SMM_PERF_COMMUNICATE_EX)) {"
+    },
+    {
+      "if_line": 507,
+      "pattern": "dict-guard",
+      "insertion_after_line": 510,
+      "next_statement": "SmmPerfCommData = (SMM_PERF_COMMUNICATE_EX *)CommBuffer;",
+      "condition_snippet": "if (!SmmIsBufferOutsideSmmValid ((UINTN)CommBuffer, TempCommBufferSize)) {"
+    },
+    {
+      "if_line": 524,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 528,
+      "next_statement": "DataSize = MultU64x32 (NumberOfEntries, sizeof(GAUGE_DATA_ENTRY_EX));",
+      "condition_snippet": "if (GaugeDataEx == NULL || NumberOfEntries == 0 || LogEntryKey > mGaugeData->NumberOfEntries ||     "
+    },
+    {
+      "if_line": 534,
+      "pattern": "dict-guard",
+      "insertion_after_line": 538,
+      "next_statement": "GaugeEntryExArray = (GAUGE_DATA_ENTRY_EX *) (mGaugeData + 1);",
+      "condition_snippet": "if (!SmmIsBufferOutsideSmmValid ((UINTN) GaugeDataEx, DataSize)) {"
+    },
+    {
+      "if_line": 609,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 611,
+      "next_statement": "TempCommBufferSize = *CommBufferSize;",
+      "condition_snippet": "if (CommBuffer == NULL || CommBufferSize == NULL) {"
+    },
+    {
+      "if_line": 615,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 617,
+      "next_statement": "if (!SmmIsBufferOutsideSmmValid ((UINTN)CommBuffer, TempCommBufferSize)) {",
+      "condition_snippet": "if(TempCommBufferSize < sizeof (SMM_PERF_COMMUNICATE)) {"
+    },
+    {
+      "if_line": 619,
+      "pattern": "dict-guard",
+      "insertion_after_line": 622,
+      "next_statement": "SmmPerfCommData = (SMM_PERF_COMMUNICATE *)CommBuffer;",
+      "condition_snippet": "if (!SmmIsBufferOutsideSmmValid ((UINTN)CommBuffer, TempCommBufferSize)) {"
+    },
+    {
+      "if_line": 636,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 640,
+      "next_statement": "DataSize = MultU64x32 (NumberOfEntries, sizeof(GAUGE_DATA_ENTRY));",
+      "condition_snippet": "if (GaugeData == NULL || NumberOfEntries == 0 || LogEntryKey > mGaugeData->NumberOfEntries ||       "
+    },
+    {
+      "if_line": 646,
+      "pattern": "dict-guard",
+      "insertion_after_line": 650,
+      "next_statement": "GaugeEntryExArray = (GAUGE_DATA_ENTRY_EX *) (mGaugeData + 1);",
+      "condition_snippet": "if (!SmmIsBufferOutsideSmmValid ((UINTN) GaugeData, DataSize)) {"
+    }
+  ],
+  "SmmLockBox.c": [
+    {
+      "if_line": 74,
+      "pattern": "dict-guard",
+      "insertion_after_line": 78,
+      "next_statement": "Status = SaveLockBox (",
+      "condition_snippet": "if (!SmmIsBufferOutsideSmmValid ((UINTN)TempLockBoxParameterSave.Buffer, (UINTN)TempLockBoxParameter"
+    },
+    {
+      "if_line": 158,
+      "pattern": "dict-guard",
+      "insertion_after_line": 162,
+      "next_statement": "Status = UpdateLockBox (",
+      "condition_snippet": "if (!SmmIsBufferOutsideSmmValid ((UINTN)TempLockBoxParameterUpdate.Buffer, (UINTN)TempLockBoxParamet"
+    },
+    {
+      "if_line": 199,
+      "pattern": "dict-guard",
+      "insertion_after_line": 203,
+      "next_statement": "if ((TempLockBoxParameterRestore.Length == 0) && (TempLockBoxParameterRestore.Buffer == 0)) {",
+      "condition_snippet": "if (!SmmIsBufferOutsideSmmValid ((UINTN)TempLockBoxParameterRestore.Buffer, (UINTN)TempLockBoxParame"
+    },
+    {
+      "if_line": 281,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 283,
+      "next_statement": "TempCommBufferSize = *CommBufferSize;",
+      "condition_snippet": "if (CommBuffer == NULL || CommBufferSize == NULL) {"
+    },
+    {
+      "if_line": 290,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 293,
+      "next_statement": "if (!SmmIsBufferOutsideSmmValid ((UINTN)CommBuffer, TempCommBufferSize)) {",
+      "condition_snippet": "if (TempCommBufferSize < sizeof(EFI_SMM_LOCK_BOX_PARAMETER_HEADER)) {"
+    },
+    {
+      "if_line": 294,
+      "pattern": "dict-guard",
+      "insertion_after_line": 297,
+      "next_statement": "LockBoxParameterHeader = (EFI_SMM_LOCK_BOX_PARAMETER_HEADER *)((UINTN)CommBuffer);",
+      "condition_snippet": "if (!SmmIsBufferOutsideSmmValid ((UINTN)CommBuffer, TempCommBufferSize)) {"
+    },
+    {
+      "if_line": 309,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 312,
+      "next_statement": "SmmLockBoxSave ((EFI_SMM_LOCK_BOX_PARAMETER_SAVE *)(UINTN)LockBoxParameterHeader);",
+      "condition_snippet": "if (TempCommBufferSize < sizeof(EFI_SMM_LOCK_BOX_PARAMETER_SAVE)) {"
+    },
+    {
+      "if_line": 316,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 319,
+      "next_statement": "SmmLockBoxUpdate ((EFI_SMM_LOCK_BOX_PARAMETER_UPDATE *)(UINTN)LockBoxParameterHeader);",
+      "condition_snippet": "if (TempCommBufferSize < sizeof(EFI_SMM_LOCK_BOX_PARAMETER_UPDATE)) {"
+    },
+    {
+      "if_line": 323,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 326,
+      "next_statement": "SmmLockBoxRestore ((EFI_SMM_LOCK_BOX_PARAMETER_RESTORE *)(UINTN)LockBoxParameterHeader);",
+      "condition_snippet": "if (TempCommBufferSize < sizeof(EFI_SMM_LOCK_BOX_PARAMETER_RESTORE)) {"
+    },
+    {
+      "if_line": 330,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 333,
+      "next_statement": "SmmLockBoxSetAttributes ((EFI_SMM_LOCK_BOX_PARAMETER_SET_ATTRIBUTES *)(UINTN)LockBoxParameterHeader);",
+      "condition_snippet": "if (TempCommBufferSize < sizeof(EFI_SMM_LOCK_BOX_PARAMETER_SET_ATTRIBUTES)) {"
+    },
+    {
+      "if_line": 337,
+      "pattern": "comparison-guard",
+      "insertion_after_line": 340,
+      "next_statement": "SmmLockBoxRestoreAllInPlace ((EFI_SMM_LOCK_BOX_PARAMETER_RESTORE_ALL_IN_PLACE *)(UINTN)LockBoxParameterHeader);",
+      "condition_snippet": "if (TempCommBufferSize < sizeof(EFI_SMM_LOCK_BOX_PARAMETER_RESTORE_ALL_IN_PLACE)) {"
+    }
+  ]
+}

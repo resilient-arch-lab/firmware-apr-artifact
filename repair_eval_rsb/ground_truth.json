@@ -1,0 +1,88 @@
+{
+  "UefiCpuPkg_Library_SmmCpuFeaturesLib_Ia32_SmiEntry.nasm": {
+    "rsm_count": 1,
+    "protected_count": 1,
+    "anchors": [
+      212
+    ]
+  },
+  "UefiCpuPkg_Library_SmmCpuFeaturesLib_Ia32_SmiException.nasm": {
+    "rsm_count": 2,
+    "protected_count": 2,
+    "anchors": [
+      136,
+      179
+    ]
+  },
+  "UefiCpuPkg_Library_SmmCpuFeaturesLib_X64_SmiEntry.nasm": {
+    "rsm_count": 1,
+    "protected_count": 1,
+    "anchors": [
+      227
+    ]
+  },
+  "UefiCpuPkg_Library_SmmCpuFeaturesLib_X64_SmiException.nasm": {
+    "rsm_count": 2,
+    "protected_count": 2,
+    "anchors": [
+      137,
+      182
+    ]
+  },
+  "UefiCpuPkg_PiSmmCpuDxeSmm_Ia32_SmiEntry.asm": {
+    "rsm_count": 1,
+    "protected_count": 1,
+    "anchors": [
+      175
+    ]
+  },
+  "UefiCpuPkg_PiSmmCpuDxeSmm_Ia32_SmiEntry.nasm": {
+    "rsm_count": 1,
+    "protected_count": 1,
+    "anchors": [
+      210
+    ]
+  },
+  "UefiCpuPkg_PiSmmCpuDxeSmm_Ia32_SmmInit.asm": {
+    "rsm_count": 1,
+    "protected_count": 1,
+    "anchors": [
+      76
+    ]
+  },
+  "UefiCpuPkg_PiSmmCpuDxeSmm_Ia32_SmmInit.nasm": {
+    "rsm_count": 1,
+    "protected_count": 1,
+    "anchors": [
+      81
+    ]
+  },
+  "UefiCpuPkg_PiSmmCpuDxeSmm_X64_SmiEntry.asm": {
+    "rsm_count": 1,
+    "protected_count": 1,
+    "anchors": [
+      195
+    ]
+  },
+  "UefiCpuPkg_PiSmmCpuDxeSmm_X64_SmiEntry.nasm": {
+    "rsm_count": 1,
+    "protected_count": 1,
+    "anchors": [
+      223
+    ]
+  },
+  "UefiCpuPkg_PiSmmCpuDxeSmm_X64_SmmInit.asm": {
+    "rsm_count": 1,
+    "protected_count": 1,
+    "anchors": [
+      94
+    ]
+  },
+  "UefiCpuPkg_PiSmmCpuDxeSmm_X64_SmmInit.nasm": {
+    "rsm_count": 1,
+    "protected_count": 1,
+    "anchors": [
+      107
+    ]
+  }
+}

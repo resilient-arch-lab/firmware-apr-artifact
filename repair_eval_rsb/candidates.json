@@ -1,0 +1,96 @@
+{
+  "UefiCpuPkg_Library_SmmCpuFeaturesLib_Ia32_SmiEntry.nasm": [
+    {
+      "rsm_line": 209,
+      "preceding_line_text": ".7:",
+      "rsm_text": "rsm"
+    }
+  ],
+  "UefiCpuPkg_Library_SmmCpuFeaturesLib_Ia32_SmiException.nasm": [
+    {
+      "rsm_line": 133,
+      "preceding_line_text": ".71:",
+      "rsm_text": "rsm"
+    },
+    {
+      "rsm_line": 175,
+      "preceding_line_text": ".72:",
+      "rsm_text": "rsm"
+    }
+  ],
+  "UefiCpuPkg_Library_SmmCpuFeaturesLib_X64_SmiEntry.nasm": [
+    {
+      "rsm_line": 224,
+      "preceding_line_text": ".1:",
+      "rsm_text": "rsm"
+    }
+  ],
+  "UefiCpuPkg_Library_SmmCpuFeaturesLib_X64_SmiException.nasm": [
+    {
+      "rsm_line": 134,
+      "preceding_line_text": ".11:",
+      "rsm_text": "rsm"
+    },
+    {
+      "rsm_line": 178,
+      "preceding_line_text": ".12:",
+      "rsm_text": "rsm"
+    }
+  ],
+  "UefiCpuPkg_PiSmmCpuDxeSmm_Ia32_SmiEntry.asm": [
+    {
+      "rsm_line": 172,
+      "preceding_line_text": "pop     ecx",
+      "rsm_text": "rsm"
+    }
+  ],
+  "UefiCpuPkg_PiSmmCpuDxeSmm_Ia32_SmiEntry.nasm": [
+    {
+      "rsm_line": 207,
+      "preceding_line_text": ".7:",
+      "rsm_text": "rsm"
+    }
+  ],
+  "UefiCpuPkg_PiSmmCpuDxeSmm_Ia32_SmmInit.asm": [
+    {
+      "rsm_line": 73,
+      "preceding_line_text": "call    SmmInitHandler",
+      "rsm_text": "rsm"
+    }
+  ],
+  "UefiCpuPkg_PiSmmCpuDxeSmm_Ia32_SmmInit.nasm": [
+    {
+      "rsm_line": 78,
+      "preceding_line_text": "call    ASM_PFX(SmmInitHandler)",
+      "rsm_text": "rsm"
+    }
+  ],
+  "UefiCpuPkg_PiSmmCpuDxeSmm_X64_SmiEntry.asm": [
+    {
+      "rsm_line": 192,
+      "preceding_line_text": "fxrstor [rsp]",
+      "rsm_text": "rsm"
+    }
+  ],
+  "UefiCpuPkg_PiSmmCpuDxeSmm_X64_SmiEntry.nasm": [
+    {
+      "rsm_line": 220,
+      "preceding_line_text": ".1:",
+      "rsm_text": "rsm"
+    }
+  ],
+  "UefiCpuPkg_PiSmmCpuDxeSmm_X64_SmmInit.asm": [
+    {
+      "rsm_line": 91,
+      "preceding_line_text": "movdqa  xmm5, [rsp + 50h]",
+      "rsm_text": "rsm"
+    }
+  ],
+  "UefiCpuPkg_PiSmmCpuDxeSmm_X64_SmmInit.nasm": [
+    {
+      "rsm_line": 104,
+      "preceding_line_text": "movdqa  xmm5, [rsp + 0x50]",
+      "rsm_text": "rsm"
+    }
+  ]
+}

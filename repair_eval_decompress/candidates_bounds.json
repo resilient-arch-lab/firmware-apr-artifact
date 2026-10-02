@@ -1,0 +1,976 @@
+{
+  "BaseUefiDecompressLib.c": [
+    {
+      "line": 163,
+      "array": "Count",
+      "index_expr": "Index",
+      "statement": "Count[Index] = 0;"
+    },
+    {
+      "line": 167,
+      "array": "Count",
+      "index_expr": "BitLen[Index]",
+      "statement": "Count[BitLen[Index]]++;"
+    },
+    {
+      "line": 170,
+      "array": "Start",
+      "index_expr": "0",
+      "statement": "Start[0] = 0;"
+    },
+    {
+      "line": 171,
+      "array": "Start",
+      "index_expr": "1",
+      "statement": "Start[1] = 0;"
+    },
+    {
+      "line": 176,
+      "array": "Start",
+      "index_expr": "Index + 1",
+      "statement": "Start[Index + 1] = (UINT16) (WordOfStart + (WordOfCount << (16 - Index)));"
+    },
+    {
+      "line": 189,
+      "array": "Weight",
+      "index_expr": "Index",
+      "statement": "Weight[Index] = (UINT16) (1U << (TableBits - Index));"
+    },
+    {
+      "line": 193,
+      "array": "Weight",
+      "index_expr": "Index",
+      "statement": "Weight[Index] = (UINT16) (1U << (16 - Index));"
+    },
+    {
+      "line": 221,
+      "array": "Table",
+      "index_expr": "Index",
+      "statement": "Table[Index] = Char;"
+    },
+    {
+      "line": 232,
+      "array": "Sd->mRight",
+      "index_expr": "Avail",
+      "statement": "Sd->mRight[Avail] = Sd->mLeft[Avail] = 0;"
+    },
+    {
+      "line": 232,
+      "array": "Sd->mLeft",
+      "index_expr": "Avail",
+      "statement": "Sd->mRight[Avail] = Sd->mLeft[Avail] = 0;"
+    },
+    {
+      "line": 376,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mPTLen[Index++] = (UINT8) CharC;"
+    },
+    {
+      "line": 387,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mPTLen[Index++] = 0;"
+    },
+    {
+      "line": 393,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mPTLen[Index++] = 0;"
+    },
+    {
+      "line": 466,
+      "array": "Sd->mCLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mCLen[Index++] = 0;"
+    },
+    {
+      "line": 471,
+      "array": "Sd->mCLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mCLen[Index++] = (UINT8) (CharC - 2);"
+    },
+    {
+      "line": 624,
+      "array": "Sd->mDstBase",
+      "index_expr": "DataIdx++",
+      "statement": "Sd->mDstBase[Sd->mOutBuf++] = Sd->mDstBase[DataIdx++];"
+    }
+  ],
+  "BaseUefiTianoCustomDecompressLib.c": [
+    {
+      "line": 154,
+      "array": "Count",
+      "index_expr": "Index",
+      "statement": "Count[Index] = 0;"
+    },
+    {
+      "line": 158,
+      "array": "Count",
+      "index_expr": "BitLen[Index]",
+      "statement": "Count[BitLen[Index]]++;"
+    },
+    {
+      "line": 161,
+      "array": "Start",
+      "index_expr": "0",
+      "statement": "Start[0] = 0;"
+    },
+    {
+      "line": 162,
+      "array": "Start",
+      "index_expr": "1",
+      "statement": "Start[1] = 0;"
+    },
+    {
+      "line": 167,
+      "array": "Start",
+      "index_expr": "Index + 1",
+      "statement": "Start[Index + 1] = (UINT16) (WordOfStart + (WordOfCount << (16 - Index)));"
+    },
+    {
+      "line": 180,
+      "array": "Weight",
+      "index_expr": "Index",
+      "statement": "Weight[Index] = (UINT16) (1U << (TableBits - Index));"
+    },
+    {
+      "line": 184,
+      "array": "Weight",
+      "index_expr": "Index",
+      "statement": "Weight[Index] = (UINT16) (1U << (16 - Index));"
+    },
+    {
+      "line": 212,
+      "array": "Table",
+      "index_expr": "Index",
+      "statement": "Table[Index] = Char;"
+    },
+    {
+      "line": 223,
+      "array": "Sd->mRight",
+      "index_expr": "Avail",
+      "statement": "Sd->mRight[Avail] = Sd->mLeft[Avail] = 0;"
+    },
+    {
+      "line": 223,
+      "array": "Sd->mLeft",
+      "index_expr": "Avail",
+      "statement": "Sd->mRight[Avail] = Sd->mLeft[Avail] = 0;"
+    },
+    {
+      "line": 339,
+      "array": "Sd->mPTTable",
+      "index_expr": "Index",
+      "statement": "Sd->mPTTable[Index] = CharC;"
+    },
+    {
+      "line": 368,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mPTLen[Index++] = (UINT8) CharC;"
+    },
+    {
+      "line": 379,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mPTLen[Index++] = 0;"
+    },
+    {
+      "line": 385,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mPTLen[Index++] = 0;"
+    },
+    {
+      "line": 421,
+      "array": "Sd->mCTable",
+      "index_expr": "Index",
+      "statement": "Sd->mCTable[Index] = CharC;"
+    },
+    {
+      "line": 461,
+      "array": "Sd->mCLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mCLen[Index++] = 0;"
+    },
+    {
+      "line": 466,
+      "array": "Sd->mCLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mCLen[Index++] = (UINT8) (CharC - 2);"
+    },
+    {
+      "line": 618,
+      "array": "Sd->mDstBase",
+      "index_expr": "DataIdx++",
+      "statement": "Sd->mDstBase[Sd->mOutBuf++] = Sd->mDstBase[DataIdx++];"
+    }
+  ],
+  "Decompress.c": [
+    {
+      "line": 199,
+      "array": "Count",
+      "index_expr": "Index",
+      "statement": "Count[Index] = 0;"
+    },
+    {
+      "line": 203,
+      "array": "Count",
+      "index_expr": "BitLen[Index]",
+      "statement": "Count[BitLen[Index]]++;"
+    },
+    {
+      "line": 206,
+      "array": "Start",
+      "index_expr": "1",
+      "statement": "Start[1] = 0;"
+    },
+    {
+      "line": 209,
+      "array": "Start",
+      "index_expr": "Index + 1",
+      "statement": "Start[Index + 1] = (UINT16) (Start[Index] + (Count[Index] << (16 - Index)));"
+    },
+    {
+      "line": 209,
+      "array": "Start",
+      "index_expr": "Index",
+      "statement": "Start[Index + 1] = (UINT16) (Start[Index] + (Count[Index] << (16 - Index)));"
+    },
+    {
+      "line": 209,
+      "array": "Count",
+      "index_expr": "Index",
+      "statement": "Start[Index + 1] = (UINT16) (Start[Index] + (Count[Index] << (16 - Index)));"
+    },
+    {
+      "line": 221,
+      "array": "Weight",
+      "index_expr": "Index",
+      "statement": "Weight[Index] = (UINT16) (1U << (TableBits - Index));"
+    },
+    {
+      "line": 225,
+      "array": "Weight",
+      "index_expr": "Index",
+      "statement": "Weight[Index] = (UINT16) (1U << (16 - Index));"
+    },
+    {
+      "line": 234,
+      "array": "Table",
+      "index_expr": "Index++",
+      "statement": "Table[Index++] = 0;"
+    },
+    {
+      "line": 253,
+      "array": "Table",
+      "index_expr": "Index",
+      "statement": "Table[Index] = Char;"
+    },
+    {
+      "line": 264,
+      "array": "Sd->mRight",
+      "index_expr": "Avail",
+      "statement": "Sd->mRight[Avail]                     = Sd->mLeft[Avail] = 0;"
+    },
+    {
+      "line": 264,
+      "array": "Sd->mLeft",
+      "index_expr": "Avail",
+      "statement": "Sd->mRight[Avail]                     = Sd->mLeft[Avail] = 0;"
+    },
+    {
+      "line": 385,
+      "array": "Sd->mPTTable",
+      "index_expr": "Index",
+      "statement": "Sd->mPTTable[Index] = CharC;"
+    },
+    {
+      "line": 389,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index",
+      "statement": "Sd->mPTLen[Index] = 0;"
+    },
+    {
+      "line": 411,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mPTLen[Index++] = (UINT8) CharC;"
+    },
+    {
+      "line": 417,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mPTLen[Index++] = 0;"
+    },
+    {
+      "line": 424,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mPTLen[Index++] = 0;"
+    },
+    {
+      "line": 460,
+      "array": "Sd->mCLen",
+      "index_expr": "Index",
+      "statement": "Sd->mCLen[Index] = 0;"
+    },
+    {
+      "line": 464,
+      "array": "Sd->mCTable",
+      "index_expr": "Index",
+      "statement": "Sd->mCTable[Index] = CharC;"
+    },
+    {
+      "line": 506,
+      "array": "Sd->mCLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mCLen[Index++] = 0;"
+    },
+    {
+      "line": 512,
+      "array": "Sd->mCLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mCLen[Index++] = (UINT8) (CharC - 2);"
+    },
+    {
+      "line": 518,
+      "array": "Sd->mCLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mCLen[Index++] = 0;"
+    },
+    {
+      "line": 629,
+      "array": "Sd->mDstBase",
+      "index_expr": "Sd->mOutBuf++",
+      "statement": "Sd->mDstBase[Sd->mOutBuf++] = (UINT8) CharC;"
+    },
+    {
+      "line": 646,
+      "array": "Sd->mDstBase",
+      "index_expr": "DataIdx++",
+      "statement": "Sd->mDstBase[Sd->mOutBuf++] = Sd->mDstBase[DataIdx++];"
+    }
+  ],
+  "TianoCompress.c": [
+    {
+      "line": 250,
+      "array": "mText",
+      "index_expr": "Index",
+      "statement": "mText[Index] = 0;"
+    },
+    {
+      "line": 352,
+      "array": "mLevel",
+      "index_expr": "Index",
+      "statement": "mLevel[Index]     = 1;"
+    },
+    {
+      "line": 353,
+      "array": "mPosition",
+      "index_expr": "Index",
+      "statement": "mPosition[Index]  = NIL;  // sentinel"
+    },
+    {
+      "line": 357,
+      "array": "mParent",
+      "index_expr": "Index",
+      "statement": "mParent[Index] = NIL;"
+    },
+    {
+      "line": 362,
+      "array": "mNext",
+      "index_expr": "Index",
+      "statement": "mNext[Index] = (NODE) (Index + 1);"
+    },
+    {
+      "line": 365,
+      "array": "mNext",
+      "index_expr": "WNDSIZ - 1",
+      "statement": "mNext[WNDSIZ - 1] = NIL;"
+    },
+    {
+      "line": 367,
+      "array": "mNext",
+      "index_expr": "Index",
+      "statement": "mNext[Index] = NIL;"
+    },
+    {
+      "line": 400,
+      "array": "mParent",
+      "index_expr": "NIL",
+      "statement": "mParent[NIL] = NodeQ;"
+    },
+    {
+      "line": 436,
+      "array": "mNext",
+      "index_expr": "Node1",
+      "statement": "mNext[Node1]    = Child;"
+    },
+    {
+      "line": 437,
+      "array": "mNext",
+      "index_expr": "Child",
+      "statement": "mNext[Child]    = Node2;"
+    },
+    {
+      "line": 438,
+      "array": "mPrev",
+      "index_expr": "Node2",
+      "statement": "mPrev[Node2]    = Child;"
+    },
+    {
+      "line": 439,
+      "array": "mPrev",
+      "index_expr": "Child",
+      "statement": "mPrev[Child]    = Node1;"
+    },
+    {
+      "line": 440,
+      "array": "mParent",
+      "index_expr": "Child",
+      "statement": "mParent[Child]  = Parent;"
+    },
+    {
+      "line": 441,
+      "array": "mChildCount",
+      "index_expr": "Parent",
+      "statement": "mChildCount[Parent]++;"
+    },
+    {
+      "line": 468,
+      "array": "mChildCount",
+      "index_expr": "New",
+      "statement": "mChildCount[New]  = 0;"
+    },
+    {
+      "line": 470,
+      "array": "mPrev",
+      "index_expr": "New",
+      "statement": "mPrev[New]        = TempNode;"
+    },
+    {
+      "line": 471,
+      "array": "mNext",
+      "index_expr": "TempNode",
+      "statement": "mNext[TempNode]   = New;"
+    },
+    {
+      "line": 473,
+      "array": "mNext",
+      "index_expr": "New",
+      "statement": "mNext[New]        = TempNode;"
+    },
+    {
+      "line": 474,
+      "array": "mPrev",
+      "index_expr": "TempNode",
+      "statement": "mPrev[TempNode]   = New;"
+    },
+    {
+      "line": 475,
+      "array": "mParent",
+      "index_expr": "New",
+      "statement": "mParent[New]      = mParent[Old];"
+    },
+    {
+      "line": 475,
+      "array": "mParent",
+      "index_expr": "Old",
+      "statement": "mParent[New]      = mParent[Old];"
+    },
+    {
+      "line": 476,
+      "array": "mLevel",
+      "index_expr": "New",
+      "statement": "mLevel[New]       = (UINT8) mMatchLen;"
+    },
+    {
+      "line": 477,
+      "array": "mPosition",
+      "index_expr": "New",
+      "statement": "mPosition[New]    = mPos;"
+    },
+    {
+      "line": 530,
+      "array": "mPosition",
+      "index_expr": "NodeT",
+      "statement": "mPosition[NodeT]  = mPos;"
+    },
+    {
+      "line": 535,
+      "array": "mPosition",
+      "index_expr": "NodeT",
+      "statement": "mPosition[NodeT] = (NODE) (mPos | (UINT32) PERC_FLAG);"
+    },
+    {
+      "line": 599,
+      "array": "mPrev",
+      "index_expr": "mPos",
+      "statement": "mPrev[mPos]     = NodeT;"
+    },
+    {
+      "line": 600,
+      "array": "mNext",
+      "index_expr": "NodeT",
+      "statement": "mNext[NodeT]    = mPos;"
+    },
+    {
+      "line": 602,
+      "array": "mNext",
+      "index_expr": "mPos",
+      "statement": "mNext[mPos]     = NodeT;"
+    },
+    {
+      "line": 603,
+      "array": "mPrev",
+      "index_expr": "NodeT",
+      "statement": "mPrev[NodeT]    = mPos;"
+    },
+    {
+      "line": 604,
+      "array": "mParent",
+      "index_expr": "mPos",
+      "statement": "mParent[mPos]   = NodeQ;"
+    },
+    {
+      "line": 644,
+      "array": "mNext",
+      "index_expr": "NodeR",
+      "statement": "mNext[NodeR]  = NodeS;"
+    },
+    {
+      "line": 645,
+      "array": "mPrev",
+      "index_expr": "NodeS",
+      "statement": "mPrev[NodeS]  = NodeR;"
+    },
+    {
+      "line": 675,
+      "array": "mPosition",
+      "index_expr": "NodeQ",
+      "statement": "mPosition[NodeQ]  = (NODE) (NodeS | WNDSIZ);"
+    },
+    {
+      "line": 689,
+      "array": "mPosition",
+      "index_expr": "NodeQ",
+      "statement": "mPosition[NodeQ] = (NODE) (NodeS | WNDSIZ | (UINT32) PERC_FLAG);"
+    },
+    {
+      "line": 695,
+      "array": "mNext",
+      "index_expr": "NodeT",
+      "statement": "mNext[NodeT]    = NodeU;"
+    },
+    {
+      "line": 696,
+      "array": "mPrev",
+      "index_expr": "NodeU",
+      "statement": "mPrev[NodeU]    = NodeT;"
+    },
+    {
+      "line": 698,
+      "array": "mNext",
+      "index_expr": "NodeT",
+      "statement": "mNext[NodeT]    = NodeS;"
+    },
+    {
+      "line": 699,
+      "array": "mPrev",
+      "index_expr": "NodeS",
+      "statement": "mPrev[NodeS]    = NodeT;"
+    },
+    {
+      "line": 701,
+      "array": "mPrev",
+      "index_expr": "NodeT",
+      "statement": "mPrev[NodeT]    = NodeS;"
+    },
+    {
+      "line": 702,
+      "array": "mNext",
+      "index_expr": "NodeS",
+      "statement": "mNext[NodeS]    = NodeT;"
+    },
+    {
+      "line": 703,
+      "array": "mParent",
+      "index_expr": "NodeS",
+      "statement": "mParent[NodeS]  = mParent[NodeR];"
+    },
+    {
+      "line": 855,
+      "array": "mTFreq",
+      "index_expr": "Index",
+      "statement": "mTFreq[Index] = 0;"
+    },
+    {
+      "line": 874,
+      "array": "mTFreq",
+      "index_expr": "0",
+      "statement": "mTFreq[0] = (UINT16) (mTFreq[0] + Count);"
+    },
+    {
+      "line": 876,
+      "array": "mTFreq",
+      "index_expr": "1",
+      "statement": "mTFreq[1]++;"
+    },
+    {
+      "line": 878,
+      "array": "mTFreq",
+      "index_expr": "0",
+      "statement": "mTFreq[0]++;"
+    },
+    {
+      "line": 879,
+      "array": "mTFreq",
+      "index_expr": "1",
+      "statement": "mTFreq[1]++;"
+    },
+    {
+      "line": 881,
+      "array": "mTFreq",
+      "index_expr": "2",
+      "statement": "mTFreq[2]++;"
+    },
+    {
+      "line": 884,
+      "array": "mTFreq",
+      "index_expr": "Index3 + 2",
+      "statement": "mTFreq[Index3 + 2]++;"
+    },
+    {
+      "line": 1110,
+      "array": "mCFreq",
+      "index_expr": "Index",
+      "statement": "mCFreq[Index] = 0;"
+    },
+    {
+      "line": 1114,
+      "array": "mPFreq",
+      "index_expr": "Index",
+      "statement": "mPFreq[Index] = 0;"
+    },
+    {
+      "line": 1154,
+      "array": "mBuf",
+      "index_expr": "CPos",
+      "statement": "mBuf[CPos]  = 0;"
+    },
+    {
+      "line": 1157,
+      "array": "mBuf",
+      "index_expr": "mOutputPos++",
+      "statement": "mBuf[mOutputPos++] = (UINT8) CharC;"
+    },
+    {
+      "line": 1158,
+      "array": "mCFreq",
+      "index_expr": "CharC",
+      "statement": "mCFreq[CharC]++;"
+    },
+    {
+      "line": 1161,
+      "array": "mBuf",
+      "index_expr": "mOutputPos++",
+      "statement": "mBuf[mOutputPos++]  = (UINT8) (Pos >> 24);"
+    },
+    {
+      "line": 1162,
+      "array": "mBuf",
+      "index_expr": "mOutputPos++",
+      "statement": "mBuf[mOutputPos++]  = (UINT8) (Pos >> 16);"
+    },
+    {
+      "line": 1163,
+      "array": "mBuf",
+      "index_expr": "mOutputPos++",
+      "statement": "mBuf[mOutputPos++]  = (UINT8) (Pos >> (UINT8_BIT));"
+    },
+    {
+      "line": 1164,
+      "array": "mBuf",
+      "index_expr": "mOutputPos++",
+      "statement": "mBuf[mOutputPos++]  = (UINT8) Pos;"
+    },
+    {
+      "line": 1171,
+      "array": "mPFreq",
+      "index_expr": "CharC",
+      "statement": "mPFreq[CharC]++;"
+    },
+    {
+      "line": 1184,
+      "array": "mCFreq",
+      "index_expr": "Index",
+      "statement": "mCFreq[Index] = 0;"
+    },
+    {
+      "line": 1188,
+      "array": "mPFreq",
+      "index_expr": "Index",
+      "statement": "mPFreq[Index] = 0;"
+    },
+    {
+      "line": 1232,
+      "array": "mCrcTable",
+      "index_expr": "Index",
+      "statement": "mCrcTable[Index] = (UINT16) Temp;"
+    },
+    {
+      "line": 1352,
+      "array": "mLenCnt",
+      "index_expr": "(Depth < 16) ? Depth : 16",
+      "statement": "mLenCnt[(Depth < 16) ? Depth : 16]++;"
+    },
+    {
+      "line": 1387,
+      "array": "mLenCnt",
+      "index_expr": "Index",
+      "statement": "mLenCnt[Index] = 0;"
+    },
+    {
+      "line": 1418,
+      "array": "mLen",
+      "index_expr": "*mSortPtr++",
+      "statement": "mLen[*mSortPtr++] = (UINT8) Index;"
+    },
+    {
+      "line": 1481,
+      "array": "Start",
+      "index_expr": "1",
+      "statement": "Start[1] = 0;"
+    },
+    {
+      "line": 1483,
+      "array": "Start",
+      "index_expr": "Index + 1",
+      "statement": "Start[Index + 1] = (UINT16) ((Start[Index] + mLenCnt[Index]) << 1);"
+    },
+    {
+      "line": 1483,
+      "array": "Start",
+      "index_expr": "Index",
+      "statement": "Start[Index + 1] = (UINT16) ((Start[Index] + mLenCnt[Index]) << 1);"
+    },
+    {
+      "line": 1483,
+      "array": "mLenCnt",
+      "index_expr": "Index",
+      "statement": "Start[Index + 1] = (UINT16) ((Start[Index] + mLenCnt[Index]) << 1);"
+    },
+    {
+      "line": 1487,
+      "array": "Code",
+      "index_expr": "Index",
+      "statement": "Code[Index] = Start[Len[Index]]++;"
+    },
+    {
+      "line": 1487,
+      "array": "Start",
+      "index_expr": "Len[Index]",
+      "statement": "Code[Index] = Start[Len[Index]]++;"
+    },
+    {
+      "line": 1531,
+      "array": "mHeap",
+      "index_expr": "1",
+      "statement": "mHeap[1]  = 0;"
+    },
+    {
+      "line": 1533,
+      "array": "mLen",
+      "index_expr": "Index",
+      "statement": "mLen[Index] = 0;"
+    },
+    {
+      "line": 1536,
+      "array": "mHeap",
+      "index_expr": "mHeapSize",
+      "statement": "mHeap[mHeapSize] = (INT16) Index;"
+    },
+    {
+      "line": 1541,
+      "array": "CodeParm",
+      "index_expr": "mHeap[1]",
+      "statement": "CodeParm[mHeap[1]] = 0;"
+    },
+    {
+      "line": 1559,
+      "array": "mHeap",
+      "index_expr": "1",
+      "statement": "mHeap[1] = mHeap[mHeapSize--];"
+    },
+    {
+      "line": 1567,
+      "array": "mFreq",
+      "index_expr": "Index3",
+      "statement": "mFreq[Index3] = (UINT16) (mFreq[Index] + mFreq[Index2]);"
+    },
+    {
+      "line": 1567,
+      "array": "mFreq",
+      "index_expr": "Index",
+      "statement": "mFreq[Index3] = (UINT16) (mFreq[Index] + mFreq[Index2]);"
+    },
+    {
+      "line": 1567,
+      "array": "mFreq",
+      "index_expr": "Index2",
+      "statement": "mFreq[Index3] = (UINT16) (mFreq[Index] + mFreq[Index2]);"
+    },
+    {
+      "line": 1568,
+      "array": "mHeap",
+      "index_expr": "1",
+      "statement": "mHeap[1]      = (INT16) Index3;"
+    },
+    {
+      "line": 1570,
+      "array": "mLeft",
+      "index_expr": "Index3",
+      "statement": "mLeft[Index3]   = (UINT16) Index;"
+    },
+    {
+      "line": 1571,
+      "array": "mRight",
+      "index_expr": "Index3",
+      "statement": "mRight[Index3]  = (UINT16) Index2;"
+    },
+    {
+      "line": 2209,
+      "array": "Count",
+      "index_expr": "Index",
+      "statement": "Count[Index] = 0;"
+    },
+    {
+      "line": 2213,
+      "array": "Count",
+      "index_expr": "BitLen[Index]",
+      "statement": "Count[BitLen[Index]]++;"
+    },
+    {
+      "line": 2216,
+      "array": "Start",
+      "index_expr": "0",
+      "statement": "Start[0] = 0;"
+    },
+    {
+      "line": 2217,
+      "array": "Start",
+      "index_expr": "1",
+      "statement": "Start[1] = 0;"
+    },
+    {
+      "line": 2222,
+      "array": "Start",
+      "index_expr": "Index + 1",
+      "statement": "Start[Index + 1] = (UINT16) (WordOfStart + (WordOfCount << (16 - Index)));"
+    },
+    {
+      "line": 2237,
+      "array": "Weight",
+      "index_expr": "Index",
+      "statement": "Weight[Index] = (UINT16) (1U << (TableBits - Index));"
+    },
+    {
+      "line": 2241,
+      "array": "Weight",
+      "index_expr": "Index",
+      "statement": "Weight[Index] = (UINT16) (1U << (16 - Index));"
+    },
+    {
+      "line": 2250,
+      "array": "Table",
+      "index_expr": "Index++",
+      "statement": "Table[Index++] = 0;"
+    },
+    {
+      "line": 2269,
+      "array": "Table",
+      "index_expr": "Index",
+      "statement": "Table[Index] = Char;"
+    },
+    {
+      "line": 2280,
+      "array": "Sd->mRight",
+      "index_expr": "Avail",
+      "statement": "Sd->mRight[Avail]                     = Sd->mLeft[Avail] = 0;"
+    },
+    {
+      "line": 2280,
+      "array": "Sd->mLeft",
+      "index_expr": "Avail",
+      "statement": "Sd->mRight[Avail]                     = Sd->mLeft[Avail] = 0;"
+    },
+    {
+      "line": 2399,
+      "array": "Sd->mPTTable",
+      "index_expr": "Index",
+      "statement": "Sd->mPTTable[Index] = CharC;"
+    },
+    {
+      "line": 2403,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index",
+      "statement": "Sd->mPTLen[Index] = 0;"
+    },
+    {
+      "line": 2425,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mPTLen[Index++] = (UINT8) CharC;"
+    },
+    {
+      "line": 2430,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mPTLen[Index++] = 0;"
+    },
+    {
+      "line": 2436,
+      "array": "Sd->mPTLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mPTLen[Index++] = 0;"
+    },
+    {
+      "line": 2471,
+      "array": "Sd->mCLen",
+      "index_expr": "Index",
+      "statement": "Sd->mCLen[Index] = 0;"
+    },
+    {
+      "line": 2475,
+      "array": "Sd->mCTable",
+      "index_expr": "Index",
+      "statement": "Sd->mCTable[Index] = CharC;"
+    },
+    {
+      "line": 2516,
+      "array": "Sd->mCLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mCLen[Index++] = 0;"
+    },
+    {
+      "line": 2521,
+      "array": "Sd->mCLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mCLen[Index++] = (UINT8) (CharC - 2);"
+    },
+    {
+      "line": 2527,
+      "array": "Sd->mCLen",
+      "index_expr": "Index++",
+      "statement": "Sd->mCLen[Index++] = 0;"
+    },
+    {
+      "line": 2654,
+      "array": "Sd->mDstBase",
+      "index_expr": "DataIdx++",
+      "statement": "Sd->mDstBase[Sd->mOutBuf++] = Sd->mDstBase[DataIdx++];"
+    }
+  ]
+}

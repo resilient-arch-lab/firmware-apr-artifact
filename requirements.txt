@@ -1,0 +1,2 @@
+# No third-party Python packages are required.
+# The artifact uses only the Python 3.8+ standard library, git, and gcc.

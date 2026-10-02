@@ -1,0 +1,23 @@
+{
+  "Decompress.c": {
+    "anchors": [
+      "Count[BitLen[Index]]++;",
+      "Table[Index] = Char;",
+      "Sd->mDstBase[Sd->mOutBuf++] = Sd->mDstBase[DataIdx++];"
+    ]
+  },
+  "BaseUefiTianoCustomDecompressLib.c": {
+    "anchors": [
+      "Count[BitLen[Index]]++;",
+      "Table[Index] = Char;",
+      "Sd->mDstBase[Sd->mOutBuf++] = Sd->mDstBase[DataIdx++];"
+    ]
+  },
+  "BaseUefiDecompressLib.c": {
+    "anchors": [
+      "Count[BitLen[Index]]++;",
+      "Table[Index] = Char;",
+      "Sd->mDstBase[Sd->mOutBuf++] = Sd->mDstBase[DataIdx++];"
+    ]
+  }
+}

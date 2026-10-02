@@ -1,0 +1,339 @@
+[
+  {
+    "type": "exact",
+    "size": 5,
+    "member_hashes": [
+      "5149b8b4f4a04853ebcf056bbd746e6701e997a7",
+      "a2e47087551b55145c4229053343d2402060ad84",
+      "169f560a0f9dd485fda70fabd69baf7bd389ddcb",
+      "2cfea54e05c926f15f9a0f1120dc1ad2975babef",
+      "ee65b84e7663d12c1f950a418a0ed63776a80e4f"
+    ],
+    "subjects": [
+      "MdeModulePkg/SmmLockBox: [CVE-2017-5753] Fix bounds check bypass",
+      "MdeModulePkg/SmmLockBox: [CVE-2017-5753] Fix bounds check bypass",
+      "MdeModulePkg/SmmLockBox: [CVE-2017-5753] Fix bounds check bypass",
+      "MdeModulePkg/SmmLockBox: [CVE-2017-5753] Fix bounds check bypass",
+      "MdeModulePkg/SmmLockBox: [CVE-2017-5753] Fix bounds check bypass"
+    ],
+    "dominant_added": [
+      "//",
+      "// The AsmLfence() call here is to ensure the above range check for the",
+      "// CommBuffer have been completed before calling into SaveLockBox().",
+      "AsmLfence ();",
+      "// CommBuffer have been completed before calling into UpdateLockBox()."
+    ]
+  },
+  {
+    "type": "exact",
+    "size": 5,
+    "member_hashes": [
+      "33e3dd3394395eed04d62aa0ac4a2e2a986c8f9e",
+      "dc358fda59bb45262aaf112bc3aed3a4e89834c8",
+      "600b0edddc9751cebe19d83dd10ba6dc67e57138",
+      "5cb3ae7a547bab0fc055972b0780f27c3639020b",
+      "cb54cd24634cfeccadb661f7f65aab3adee05e1c"
+    ],
+    "subjects": [
+      "MdeModulePkg/FaultTolerantWrite:[CVE-2017-5753]Fix bounds check bypass",
+      "MdeModulePkg/FaultTolerantWrite:[CVE-2017-5753]Fix bounds check bypass",
+      "MdeModulePkg/FaultTolerantWrite:[CVE-2017-5753]Fix bounds check bypass",
+      "MdeModulePkg/FaultTolerantWrite:[CVE-2017-5753]Fix bounds check bypass",
+      "MdeModulePkg/FaultTolerantWrite:[CVE-2017-5753]Fix bounds check bypass"
+    ],
+    "dominant_added": [
+      "#include <Library/BaseLib.h>",
+      "//",
+      "// The AsmLfence() call here is to ensure the previous range/content",
+      "// checks for the CommBuffer have been completed before calling into",
+      "// FtwWrite()."
+    ]
+  },
+  {
+    "type": "exact",
+    "size": 5,
+    "member_hashes": [
+      "9a036ccd8b1cc9bfeffe0f2c2d99cecf4432427e",
+      "7648fe33a559139e61142fca493ce41a8e8589b8",
+      "17c81a6b48fefda3e30fd904d4755522bca48c50",
+      "84f5807928803a973838f5b096a99c0558f3ec70",
+      "2ecd829972f8553de83fbf943c5b89863999d7c8"
+    ],
+    "subjects": [
+      "MdePkg/BaseLib: Add new AsmLfence API",
+      "MdePkg/BaseLib: Add new AsmLfence API",
+      "MdePkg/BaseLib: Add new AsmLfence API",
+      "MdePkg/BaseLib: Add new AsmLfence API",
+      "MdePkg/BaseLib: Add new AsmLfence API"
+    ],
+    "dominant_added": [
+      "/**",
+      "Performs a serializing operation on all load-from-memory instructions that",
+      "were issued prior the AsmLfence function.",
+      "Executes a LFENCE instruction. This function is only available on IA-32 and x64.",
+      "**/"
+    ]
+  },
+  {
+    "type": "exact",
+    "size": 4,
+    "member_hashes": [
+      "6762101d0c2aa3fa2ac05a8fae52e70d3df4cf24",
+      "49fa59e82e4c6ea798f65fc4e5948eae63ad6e07",
+      "e997f66e75ae55b2aadf6c97e1963383e92cab65",
+      "5b02be4d9a234d80c7578fc3a0c789d22ce83f38"
+    ],
+    "subjects": [
+      "UefiCpuPkg/PiSmmCpuDxeSmm: [CVE-2017-5753] Fix bounds check bypass",
+      "UefiCpuPkg/PiSmmCpuDxeSmm: [CVE-2017-5753] Fix bounds check bypass",
+      "UefiCpuPkg/PiSmmCpuDxeSmm: [CVE-2017-5753] Fix bounds check bypass",
+      "UefiCpuPkg/PiSmmCpuDxeSmm: [CVE-2017-5753] Fix bounds check bypass"
+    ],
+    "dominant_added": [
+      "//",
+      "// The AsmLfence() call here is to ensure the above check for the CpuIndex",
+      "// has been completed before the execution of subsequent codes.",
+      "AsmLfence ();"
+    ]
+  },
+  {
+    "type": "exact",
+    "size": 4,
+    "member_hashes": [
+      "57d2123805686b2ff89861b5bd88091a7127e084",
+      "70d54d4a6e1cd55db4d9ec00e746e79e98493226",
+      "07e17a6278614e59a8adbabf55abfbc110257b12",
+      "e83d841fdc2878959185c4c6cc38a7a1e88377a4"
+    ],
+    "subjects": [
+      "MdeModulePkg/Variable: [CVE-2017-5753] Fix bounds check bypass",
+      "MdeModulePkg/Variable: [CVE-2017-5753] Fix bounds check bypass",
+      "MdeModulePkg/Variable: [CVE-2017-5753] Fix bounds check bypass",
+      "MdeModulePkg/Variable: [CVE-2017-5753] Fix bounds check bypass"
+    ],
+    "dominant_added": [
+      "/** @file",
+      "Serialize operation on all load-from-memory instructions (DXE version).",
+      "This program and the accompanying materials",
+      "are licensed and made available under the terms and conditions of the BSD License",
+      "which accompanies this distribution.  The full text of the license may be found at"
+    ]
+  },
+  {
+    "type": "exact",
+    "size": 4,
+    "member_hashes": [
+      "cde5614bc0fc60d28e57ee731ab45a9b44949a21",
+      "5f0a27fcf9c030c41a256f915ecfc3a43a27ffec",
+      "7515b75f921d20b2487f86ab38bc0a030ce763b9",
+      "684db6da64bc7b5faee4e1174e801c245f563b5c"
+    ],
+    "subjects": [
+      "IntelFrameworkModulePkg: Add more checker in UefiTianoDecompressLib (CVE FIX)",
+      "IntelFrameworkModulePkg: Add more checker in UefiTianoDecompressLib (CVE FIX)",
+      "IntelFrameworkModulePkg: Add more checker in UefiTianoDecompressLib (CVE FIX)",
+      "IntelFrameworkModulePkg: Add more checker in UefiTianoDecompressLib (CVE FIX)"
+    ],
+    "dominant_added": [
+      "UINT16  MaxTableLength;",
+      "if (BitLen[Index] > 16) {",
+      "return (UINT16) BAD_TABLE;",
+      "}",
+      "MaxTableLength = (UINT16) (1U << TableBits);"
+    ]
+  },
+  {
+    "type": "exact",
+    "size": 4,
+    "member_hashes": [
+      "ee9ec6e6426f8f36bb9cd1301eb836959ef1412e",
+      "167e6e48af8dfd558aa3c7497959092d58b26d54",
+      "fb72f6fd6f1c4130f0d0037f33a5153fe9fdb322",
+      "2ec7953d49677142c5f7552e9e3d96fb406ba0c4"
+    ],
+    "subjects": [
+      "MdePkg: Add more checker in UefiDecompressLib to access the valid buffer only (CVE FIX)",
+      "MdePkg: Add more checker in UefiDecompressLib to access the valid buffer only (CVE FIX)",
+      "MdePkg: Add more checker in UefiDecompressLib to access the valid buffer only (CVE FIX)",
+      "MdePkg: Add more checker in UefiDecompressLib to access the valid buffer only (CVE FIX)"
+    ],
+    "dominant_added": [
+      "UINT16  MaxTableLength;",
+      "if (BitLen[Index] > 16) {",
+      "return (UINT16) BAD_TABLE;",
+      "}",
+      "MaxTableLength = (UINT16) (1U << TableBits);"
+    ]
+  },
+  {
+    "type": "exact",
+    "size": 3,
+    "member_hashes": [
+      "9077599e73fd091aeedced512daf2e64520348cb",
+      "72d299c376f7f9df2e65c9015020218614ba145b",
+      "ddd7bc4ccbb25ac0fe718c1e41cfebfbe6515d39"
+    ],
+    "subjects": [
+      "MdeModulePkg/SmmCorePerfLib: [CVE-2017-5753] Fix bounds check bypass",
+      "MdeModulePkg/SmmCorePerfLib: [CVE-2017-5753] Fix bounds check bypass",
+      "MdeModulePkg/SmmCorePerfLib: [CVE-2017-5753] Fix bounds check bypass"
+    ],
+    "dominant_added": [
+      "//",
+      "// The AsmLfence() call here is to ensure the previous range/content",
+      "// checks for the CommBuffer have been completed before calling",
+      "// CopyMem().",
+      "AsmLfence ();"
+    ]
+  },
+  {
+    "type": "exact",
+    "size": 3,
+    "member_hashes": [
+      "94c43d6fa64481e2f9ee1d96949349a0b9254352",
+      "dc52d246099c7a4e769b310b5c86bf28801bca6c",
+      "0df5056012e64fdf14cab0cd94e3b8630a3a88ba"
+    ],
+    "subjects": [
+      "UefiCpuPkg/SmmCpuFeaturesLib: [CVE-2017-5715] Stuff RSB before RSM",
+      "UefiCpuPkg/SmmCpuFeaturesLib: [CVE-2017-5715] Stuff RSB before RSM",
+      "UefiCpuPkg/SmmCpuFeaturesLib: [CVE-2017-5715] Stuff RSB before RSM"
+    ],
+    "dominant_added": [
+      "%include \"StuffRsb.inc\"",
+      "StuffRsb32",
+      "rsm",
+      ";------------------------------------------------------------------------------",
+      ";"
+    ]
+  },
+  {
+    "type": "exact",
+    "size": 3,
+    "member_hashes": [
+      "ad4bebe21f684d404949fd60f77d461934f70393",
+      "34a5f0e3e3d2274aa25f0712402ceca86d330f8d",
+      "02f7fd158e977d0368705129c52a800217fe8887"
+    ],
+    "subjects": [
+      "UefiCpuPkg/PiSmmCpuDxeSmm: [CVE-2017-5715] Stuff RSB before RSM",
+      "UefiCpuPkg/PiSmmCpuDxeSmm: [CVE-2017-5715] Stuff RSB before RSM",
+      "UefiCpuPkg/PiSmmCpuDxeSmm: [CVE-2017-5715] Stuff RSB before RSM"
+    ],
+    "dominant_added": [
+      "%include \"StuffRsb.inc\"",
+      "StuffRsb32",
+      ";------------------------------------------------------------------------------",
+      ";",
+      "; This program and the accompanying materials"
+    ]
+  },
+  {
+    "type": "exact",
+    "size": 3,
+    "member_hashes": [
+      "551888b06a1987b9db5040e10cdde5be34236653",
+      "1d707a02d86e5f43cf0ed2cd43f7583a8d7a39db",
+      "96c32854ad69cb7cc983165926d58049f7ab27cc"
+    ],
+    "subjects": [
+      "BaseTools: Add more checker in Decompress algorithm to access the valid buffer (CVE FIX)",
+      "BaseTools: Add more checker in Decompress algorithm to access the valid buffer (CVE FIX)",
+      "BaseTools: Add more checker in Decompress algorithm to access the valid buffer (CVE FIX)"
+    ],
+    "dominant_added": [
+      "UINT16  MaxTableLength;",
+      "if (BitLen[Index] > 16) {",
+      "return (UINT16) BAD_TABLE;",
+      "}",
+      "MaxTableLength = (UINT16) (1U << TableBits);"
+    ]
+  },
+  {
+    "type": "exact",
+    "size": 2,
+    "member_hashes": [
+      "d2d8d38ee08c5e602fb092f940dfecc1f5a4eb38",
+      "67e6f2617f14e9dfaafe81e96165763ea5bf0f84"
+    ],
+    "subjects": [
+      "UefiCpuPkg/PiSmmCpuDxeSmm: Safe handling of IDT register on SMM entry",
+      "UefiCpuPkg/PiSmmCpuDxeSmm: Safe handling of IDT register on SMM entry"
+    ],
+    "dominant_added": [
+      "mov     eax, 0x628                   ; as cr4.PGE is not set here, refresh cr3",
+      "mov     rax, cr4                    ; enable MCE",
+      "bts     rax, 6",
+      "mov     cr4, rax"
+    ]
+  },
+  {
+    "type": "exact",
+    "size": 2,
+    "member_hashes": [
+      "f7defccaecd625f77225abbbce7658ed02af21c4",
+      "785e1699aca3a9b4cf5dfaa924b3a440b3080d3b"
+    ],
+    "subjects": [
+      "SecurityPkg/OpalPWSupportLib: [CVE-2017-5753] Fix bounds check bypass",
+      "SecurityPkg/OpalPWSupportLib: [CVE-2017-5753] Fix bounds check bypass"
+    ],
+    "dominant_added": [
+      "//",
+      "// The AsmLfence() call here is to ensure the above range checks for the",
+      "// CommBuffer have been completed before calling into OpalSavePasswordToSmm().",
+      "AsmLfence ();"
+    ]
+  },
+  {
+    "type": "structural",
+    "size": 2,
+    "member_hashes": [
+      "9a75b030cf27d2530444e9a2f9f11867f79bf679",
+      "aeaee8944f0eaacbf4cdf39279785b9ba4836bb6"
+    ],
+    "subjects": [
+      "StandaloneMmPkg/Hob: Integer Overflow in CreateHob()",
+      "EmbeddedPkg/Hob: Integer Overflow in CreateHob()"
+    ],
+    "dominant_added": [
+      "//",
+      "// Check Length to avoid data overflow.",
+      "if (HobLength > MAX_UINT16 - 0x7) {",
+      "return NULL;",
+      "}"
+    ]
+  },
+  {
+    "type": "structural",
+    "size": 2,
+    "member_hashes": [
+      "1d3215fd24f47eaa4877542a59b4bbf5afc0cfe8",
+      "cb30c8f25162e6d8142c6b098f14c1e4e7f125ce"
+    ],
+    "subjects": [
+      "NetworkPkg/ArpDxe: Recycle invalid ARP packets (CVE-2019-14559)",
+      "SecurityPkg/DxeImageVerificationLib: plug Data leak in IsForbiddenByDbx() (CVE-2019-14575)"
+    ],
+    "dominant_added": [
+      "goto RECYCLE_RXDATA;",
+      "goto Done;"
+    ]
+  },
+  {
+    "type": "structural",
+    "size": 2,
+    "member_hashes": [
+      "ece4c1de3e7b2340d351c2054c79ea689a954ed6",
+      "467e1ffa7634159b99fb8aeb93e2836b0f2e5f43"
+    ],
+    "subjects": [
+      "IntelFrameworkModulePkg/FwVolDxe: Ensure FfsFileHeader 8 bytes aligned",
+      "MdeModulePkg/PeiCore: Ensure FfsFileHeader 8 bytes aligned"
+    ],
+    "dominant_added": [
+      "Ptr = (UINT8 *) ALIGN_POINTER (Ptr, 8);",
+      "FfsFileHeader = (EFI_FFS_FILE_HEADER *) ALIGN_POINTER (FfsFileHeader, 8);"
+    ]
+  }
+]

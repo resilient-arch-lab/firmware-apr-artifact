@@ -1,0 +1,17 @@
+{
+  "Hob.c": {
+    "anchors": [
+      "HobLength = (UINT16)((HobLength + 0x7) & (~0x7));"
+    ]
+  },
+  "StandaloneMmCoreHobLib.c": {
+    "anchors": [
+      "HobLength = (UINT16)((HobLength + 0x7) & (~0x7));"
+    ]
+  },
+  "UefiPayloadPkg_Hob.c": {
+    "anchors": [
+      "HobLength = (UINT16)((HobLength + 0x7) & (~0x7));"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "buggy_UDK2014.SP1.c": {
+    "strategy_a_direct": false,
+    "strategy_b_fuzzy": false,
+    "strategy_c_redetect": true,
+    "msg_a": "",
+    "msg_b": "",
+    "msg_c": "17 candidates found and patched"
+  },
+  "buggy_UDK2015.c": {
+    "strategy_a_direct": false,
+    "strategy_b_fuzzy": false,
+    "strategy_c_redetect": true,
+    "msg_a": "",
+    "msg_b": "",
+    "msg_c": "17 candidates found and patched"
+  },
+  "buggy_UDK2017.c": {
+    "strategy_a_direct": false,
+    "strategy_b_fuzzy": false,
+    "strategy_c_redetect": true,
+    "msg_a": "",
+    "msg_b": "",
+    "msg_c": "17 candidates found and patched"
+  },
+  "buggy_UDK2018.c": {
+    "strategy_a_direct": false,
+    "strategy_b_fuzzy": false,
+    "strategy_c_redetect": true,
+    "msg_a": "",
+    "msg_b": "",
+    "msg_c": "17 candidates found and patched"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "MdeModulePkg_Variable.c": {
+    "original_hash": "e83d841fdc2878959185c4c6cc38a7a1e88377a4",
+    "parent_hash": "ee65b84e7663d12c1f950a418a0ed63776a80e4f",
+    "filepath": "MdeModulePkg/Universal/Variable/RuntimeDxe/Variable.c",
+    "anchors": [
+      "PayloadSize = DataSize - AUTHINFO2_SIZE (Data);"
+    ]
+  },
+  "MdeModulePkg_VariableSmm.c": {
+    "original_hash": "e83d841fdc2878959185c4c6cc38a7a1e88377a4",
+    "parent_hash": "ee65b84e7663d12c1f950a418a0ed63776a80e4f",
+    "filepath": "MdeModulePkg/Universal/Variable/RuntimeDxe/VariableSmm.c",
+    "anchors": [
+      "if (SmmVariableHeader->NameSize < sizeof (CHAR16) || SmmVariableHeader->Name[SmmVariableHeader->NameSize/sizeof (CHAR16) - 1] != L'\\0') {",
+      "if (SmmVariableHeader->NameSize < sizeof (CHAR16) || SmmVariableHeader->Name[SmmVariableHeader->NameSize/sizeof (CHAR16) - 1] != L'\\0') {",
+      "if (CommVariableProperty->NameSize < sizeof (CHAR16) || CommVariableProperty->Name[CommVariableProperty->NameSize/sizeof (CHAR16) - 1] != L'\\0') {"
+    ]
+  },
+  "SecurityPkg_Variable.c": {
+    "original_hash": "622326deb8252b6b4f69064620bf07988d4886e0",
+    "parent_hash": "b00c4c12944418a7587acf9ff0edb8d1cfc43be4",
+    "filepath": "SecurityPkg/VariableAuthenticated/RuntimeDxe/Variable.c",
+    "anchors": [
+      "PayloadSize = DataSize - AUTHINFO2_SIZE (Data);"
+    ]
+  },
+  "SecurityPkg_VariableSmm.c": {
+    "original_hash": "622326deb8252b6b4f69064620bf07988d4886e0",
+    "parent_hash": "b00c4c12944418a7587acf9ff0edb8d1cfc43be4",
+    "filepath": "SecurityPkg/VariableAuthenticated/RuntimeDxe/VariableSmm.c",
+    "anchors": [
+      "if (SmmVariableHeader->NameSize < sizeof (CHAR16) || SmmVariableHeader->Name[SmmVariableHeader->NameSize/sizeof (CHAR16) - 1] != L'\\0') {",
+      "if (SmmVariableHeader->NameSize < sizeof (CHAR16) || SmmVariableHeader->Name[SmmVariableHeader->NameSize/sizeof (CHAR16) - 1] != L'\\0') {"
+    ]
+  }
+}
